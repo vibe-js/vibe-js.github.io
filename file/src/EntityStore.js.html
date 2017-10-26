@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/EntityStore.js | vibejs</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="State management library for javascript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vibejs"><meta property="twitter:description" content="State management library for javascript"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/EntityStore.js~EntityStore.html">EntityStore</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#directory">directory</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/Directory.js~Directory.html">Directory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/DirectoryMutation.js~DirectoryMutation.html">DirectoryMutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/DirectorySubject.js~DirectorySubject.html">DirectorySubject</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#entity">entity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/EntitySubject.js~EntitySubject.html">EntitySubject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/Model.js~Model.html">Model</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/Mutation.js~Mutation.html">Mutation</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#functions">functions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createReactiveInterface">createReactiveInterface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendArray">extendArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setComputedProperty">setComputedProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isAttribute">isAttribute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isAttributeArray">isAttributeArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isIdentifier">isIdentifier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isReference">isReference</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isReferenceArray">isReferenceArray</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/EntityStore.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import * as R from &apos;ramda&apos;;
+
+import Rx from &apos;rxjs/Rx&apos;;
+import EntitySubject from &apos;./entity/EntitySubject&apos;;
+
+
+/**
+ * @class {EntityStore}
+ */
+export default class EntityStore {
+
+    /**
+     * Constructs entity store
+     * @param {Array} models - array of defined models
+     */
+    constructor(models) {
+        /**
+         * Saved array of models for resetting purposes
+         * @member {Array}
+         **/
+        this._modelsArray = models;
+        /**
+         * Object with models where key is model name and value is model instance
+         * @member {Object}
+         **/
+        this.models = {};
+        /**
+         * Object with entities where key is [model name][entity id] and value is entity state
+         * @member {Object}
+         **/
+        this.heap = {};
+        /**
+         * Object with subjects where key is [model name][entity id] and value is entity state
+         * @member {Object}
+         **/
+        this.observables = {};
+        this._setupModelsAndHeap(models);
+    }
+
+    /**
+     * Resolve all entities of model
+     * @param {string} model - name of model
+     * @returns {Array} - all kept entities as subject array
+     */
+    allEntities(model) {
+        return Object.keys(this.heap[model]).map(key =&gt; {
+            return this.getOrCreateEntitySubject(model, key);
+        })
+    }
+
+    /**
+     * Notifies all subscribers entity is updated
+     * @param {string} model - name of model
+     * @param {*} id - id of entity
+     * @param {Object} value - result state
+     * @param {EntitySubject} source - EntitySubject which caused update
+     * @param {string} message - optional message for debugging purposes
+     */
+    updateEntity(model, id, value, source, message = &apos;&apos;) {
+        this.heap[model][id] = value;
+        this.entityUpdated(model, id, source);
+    }
+
+    /**
+     * Clears internal objects
+     * @param {*} models - array of defined models
+     */
+    _setupModelsAndHeap(models) {
+        models.forEach(model =&gt; {
+            this.models[model.name] = model;
+            this.heap[model.name] = {};
+            this.observables[model.name] = {};
+            model.attachStore(this);
+        });
+    }
+
+    /**
+     * Clears heap and observables
+     */
+    clear() {
+        this._setupModelsAndHeap(this._modelsArray);
+    }
+
+    /**
+     * Put or replace state of entity
+     * @param {string} model - name of model
+     * @param {*} id - entity id 
+     * @param {Object} value - result state
+     */
+    putEntity(model, id, value) {
+        this.heap[model][id] = value;
+        this.getOrCreateEntitySubject(model, id).updateInterface();
+    }
+
+    /**
+     * Delete entity from heap
+     * @param {string} model - name of model
+     * @param {*} id - entity id
+     */
+    deleteEntity(model, id) {
+        delete this.heap[model][id];
+        this.getOrCreateEntitySubject(model, id).updateInterface();
+    }
+
+    /**
+     * Lazy EntitySubject evaluation
+     * @see {@link EntitySubject}
+     * @param {string} name - name of model
+     * @param {*} id - entity id
+     */
+    getOrCreateEntitySubject(name, id) {
+        const observable = this.observables[name][id];
+        if (observable)
+            return observable;
+        else
+            return this._createEntitySubject(name, id);
+    }
+
+    /**
+     * Create and return subject
+     * @see {@link EntityStore.getOrCreateEntitySubject}
+     * @param {string} model - name of model
+     * @param {*} id - entity id
+     */
+    _createEntitySubject(model, id) {
+        this.observables[model][id] = new EntitySubject(model, id, new Rx.Subject(), this.models[model], this);
+        return this.observables[model][id];
+    }
+
+
+    /**
+     * Called when need to force update entity
+     * @param {string} model - name of model
+     * @param {*} id - entity id
+     * @param {EntitySubject} source - cause of update
+     */
+    entityUpdated(model, id, source) {
+        this.getOrCreateEntitySubject(model, id).observable.next({
+            payload: this.heap[model][id],
+            source
+        });
+    }
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

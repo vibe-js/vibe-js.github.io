@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/directory/DirectorySubject.js | vibejs</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="State management library for javascript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vibejs"><meta property="twitter:description" content="State management library for javascript"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/EntityStore.js~EntityStore.html">EntityStore</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#directory">directory</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/Directory.js~Directory.html">Directory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/DirectoryMutation.js~DirectoryMutation.html">DirectoryMutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/DirectorySubject.js~DirectorySubject.html">DirectorySubject</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#entity">entity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/EntitySubject.js~EntitySubject.html">EntitySubject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/Model.js~Model.html">Model</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/Mutation.js~Mutation.html">Mutation</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#functions">functions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createReactiveInterface">createReactiveInterface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendArray">extendArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setComputedProperty">setComputedProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isAttribute">isAttribute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isAttributeArray">isAttributeArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isIdentifier">isIdentifier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isReference">isReference</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isReferenceArray">isReferenceArray</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/directory/DirectorySubject.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import * as R from &apos;ramda&apos;;
+
+import * as TypeChecker from &apos;../functions/typeChecker&apos;;
+import DirectoryMutation from &apos;./DirectoryMutation&apos;;
+import Rx from &apos;rxjs/Rx&apos;;
+import extendArray from &apos;../functions/extendArray&apos;;
+import createReactiveInterface from &apos;../functions/createReactiveInterface&apos;;
+
+export default class {
+    constructor(directory, store) {
+        this.directory = directory;
+        this.store = store;
+        this.subscriptions = {};
+        this.observable = new Rx.Subject();
+        Object.entries(store.models).forEach(([key, value]) =&gt; {
+            this.subscriptions[key] = {};
+        });
+
+        this.observable.subscribe(_ =&gt; {
+            this.updateInterface();
+        })
+
+        this.interface = null;
+        this.updateInterface();
+    }
+
+    updateInterface() {
+        this.interface = this.createReactiveInterface();
+    }
+
+    mutate(mutation, message = &quot;&quot;) {
+        new DirectoryMutation(this, mutation).commit(message)
+
+    }
+
+    _asObject(structure, item, deepness) {
+        const json = {};
+        Object.entries(structure).forEach(([key, value]) =&gt; {
+            if (TypeChecker.isAttribute(structure[key])) {
+                json[key] = item[key];
+            } else if (TypeChecker.isAttributeArray(structure[key])) {
+                json[key] = item[key];
+            } else if (TypeChecker.isReference(structure[key])) {
+                if (deepness &gt; 0 &amp;&amp; item[key])
+                    json[key] = item[key].$subject.asObject(deepness - 1);
+                else
+                    json[key] = null;
+            } else if (TypeChecker.isReferenceArray(structure[key])) {
+                if (deepness &gt; 0)
+                    json[key] = item[key].map(inter =&gt; {
+                        return inter.$subject.asObject(deepness - 1);
+                    })
+                else
+                    json[key] = [];
+            } else if (TypeChecker.isIdentifier(structure[key])) {
+                json[key] = item[key];
+            } else {
+                //object
+                json[key] = this._asObject(structure[key], item[key], deepness);
+            }
+        })
+
+        return json;
+    }
+
+    asObject(relationDeepness) {
+        if (this.interface){
+            const result = this._asObject(this.directory.structure, this.interface, relationDeepness)
+            this._applyComputed(result);
+            return result;
+        }else
+            return null;
+    }
+
+    update() {
+        this.observable.next(this.state);
+    }
+
+
+
+    createReactiveInterface() {
+        const get = (key) =&gt; {
+            return this.directory.state[key];
+        }
+        const set = (key, value) =&gt; {
+            this.mutate({
+                [key]: value
+            }, `Modify ${key} with value ${value}`)
+        }
+        const reactiveInterface = {};
+        this._mapObserverToSource(reactiveInterface, this.directory.structure, {
+            get,
+            set
+        });
+        this._applyComputed(reactiveInterface);
+        this._applyMutations(reactiveInterface);
+        return reactiveInterface;
+    }
+
+
+    _applyComputed(reactiveInterface){
+        Object.entries(this.directory.computed).forEach(([key, value]) =&gt; {
+            reactiveInterface[key] = value.call(reactiveInterface)
+        });
+    }
+
+    _applyMutations(reactiveInterface){
+        Object.entries(this.directory.mutations).forEach(([key, value]) =&gt; {
+            reactiveInterface[key] = value.bind(reactiveInterface)
+        })
+    }
+
+
+    _mapObserverToSource(item = {}, structure, stateProvider) {
+        const store = this.store;
+        const directorySubject = this;
+        createReactiveInterface({
+            item: item,
+            stateProvider: stateProvider,
+            store: this.store,
+            updateState(source){
+                directorySubject.update();
+            },
+            structure: this.directory.structure,
+            subscribe(name, id){
+                if (!directorySubject.isSubscriberOf(name, id)) {
+                    directorySubject.subscribe(name, id)(({ payload, source }) =&gt; {
+                        directorySubject.update();
+                    });
+                }
+            },
+            unsubscribe(name, id){
+                directorySubject.unsubscribe(name, id)
+            }
+        });
+    }
+
+    equals(directorySubject) {
+        return this === directorySubject;
+    }
+
+
+    isSubscriberOf(name, id) {
+        return this.subscriptions[name][id];
+    }
+
+    subscribe(name, id) {
+        return (a, b, c) =&gt; {
+            this.subscriptions[name][id] = this.store.getOrCreateEntitySubject(name, id).observable
+                .filter(({ payload, source }) =&gt; source !== this)
+                .subscribe(a, b, c);
+        }
+    }
+
+    unsubscribe(name, id) {
+        if (this.subscriptions[name][id]) {
+            this.subscriptions[name][id].unsubscribe();
+        }
+        delete this.subscriptions[name][id];
+    }
+
+
+    toString() {
+        return `&quot;#${this.name}&quot;`
+    }
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

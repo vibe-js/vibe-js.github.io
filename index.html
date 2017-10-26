@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | vibejs</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="State management library for javascript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vibejs"><meta property="twitter:description" content="State management library for javascript"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/EntityStore.js~EntityStore.html">EntityStore</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#directory">directory</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/Directory.js~Directory.html">Directory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/DirectoryMutation.js~DirectoryMutation.html">DirectoryMutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/DirectorySubject.js~DirectorySubject.html">DirectorySubject</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#entity">entity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/EntitySubject.js~EntitySubject.html">EntitySubject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/Model.js~Model.html">Model</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/Mutation.js~Mutation.html">Mutation</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#functions">functions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createReactiveInterface">createReactiveInterface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendArray">extendArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setComputedProperty">setComputedProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isAttribute">isAttribute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isAttributeArray">isAttributeArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isIdentifier">isIdentifier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isReference">isReference</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isReferenceArray">isReferenceArray</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="vibe-js">Vibe.js</h1><h2 id="install">Install</h2><p><code>yarn add vibejs</code></p>
+<p><code>npm install vibejs</code></p>
+<h2 id="tests">Tests</h2><p><code>yarn test</code></p>
+<p>For now vibejs has 29 tests.</p>
+<p>Hi there, this is reactive state management tool for JavaScript.</p>
+<p>There are 3 core concepts:
+1) Model and EntitySubject
+2) EntityStore
+3) Directory and DirectorySubject</p>
+<h2 id="model">Model</h2><p>Model is description of entity.</p>
+<p>You can describe it like this:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">const User = new Model(&apos;User&apos;, {
+    structure: {
+        name: types.Attribute,
+        mother: types.Reference(&apos;User&apos;), // reference to entity with name &apos;User&apos;
+        mother: types.Reference(&apos;User&apos;), //same
+        wrappedValues: { // you can create wrapped structures
+            age: types.Attribute
+        }
+    },
+    computed: {
+        upperCaseName(){
+            return this.name.toUpperCase()
+        }
+    },
+    mutations: {
+        setName(newName){
+            this.name = newName;
+        }
+    }
+});</code>
+</code></pre>
+<p>After this, you can insert new entity and observe it.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">User.insertEntity(1, {
+    name: &quot;Elon Musk&quot;,
+    mother: 2, // reference by id,
+    father: User.observe(3).interface, // or by subject interface
+    wrappedValues: {
+        age: 46
+    } 
+});
+const subject = User.observe(1);</code>
+</code></pre>
+<p>What happens:
+1) You push json into model&apos;s <code>insertEntity</code> method
+2) Model checks its structure and sets default if not set
+3) Model pushes entity into store
+4) Store notifies everybody, who is observing entity of type <code>User</code> and <code>id=1</code>.</p>
+<p>And now we got subject. In vibejs subject is object to work with entity.</p>
+<p>At this point you already can use <code>subject</code> to access and change reactive entity&apos;s data. For example</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">User.insertEntity(5, {
+    name: &quot;Errol Musk&quot;,
+});
+const reactiveInterface = subject.interface;
+reactiveInterface.father = 5; // access relation directly by i
+reactiveInterface.father = User.observe(5).interface // or by subject&apos;s interface
+reactiveInterface.father.name = &quot;Somebody else&quot;
+// after this line User#5 will have name equals `Somebody else` and user#1 will get updated</code>
+</code></pre>
+<p>But we want to compose different data, like models or just primitives. For example, if you need screen, where user supposed to change his name.
+We need to compose <code>newUserName</code> and entity he updates.</p>
+<p>To do this, we need to define <code>Directory</code></p>
+<pre><code class="lang-js"><code class="source-code prettyprint">const UpdateProfileDirectory = new Directory(&apos;UpdateProfile&apos;, {
+    structure: {
+        newUserName: types.Attribute,
+        profile: types.Reference(&apos;User&apos;)
+    },
+    mutations: {
+        commitNewName(){
+            /* fetch(...).then(response =&gt; {
+                User.observe(this.profile.id)
+                    .mutate(response, &apos;Updated from updateProfile&apos;)
+            })*/
+            // we can commit our mutations with text message for debugging purposes.
+        }
+    }
+}, Store)</code>
+</code></pre>
+<p>Directory has no identifier. It is just structure of document you need.</p>
+<p>So, at some point it&apos;s nice already.
+But what about changes? Reacting only for necessary data changes is core point of Vibe.
+It means, any subject won&apos;t get updated if its attribute is not updated or its relation is not updated.</p>
+<p>Here are examples how you subscribe to changes of entity</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">subject.observable.subscribe(({payload, source}) =&gt; {
+    // payload is structure from store
+    // source - subject which caused update
+
+})</code>
+</code></pre>
+<p>... or to directory</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">UpdateProfileDirectory.observable.subscribe(state =&gt; {
+    // state - inner structure, like entity&apos;s in the store
+    /*
+        renderComponent();
+    */
+});</code>
+</code></pre>
+<p>It means, you won&apos;t need to react to all changes, like in <code>Flux</code> solutions.</p>
+<p>You create structure for a concrete task. You define relationships and your durectory will only get updated if this relationships are updated(and they will update if their relationships are updated and like this...).</p>
+<p>TODO: 
+1) JSONifying subjects 
+2) Persistence of store and directories
+3) Examples with vue, react.</p>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

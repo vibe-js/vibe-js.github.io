@@ -1,0 +1,3169 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/EntityStore.js",
+    "content": "import * as R from 'ramda';\n\nimport Rx from 'rxjs/Rx';\nimport EntitySubject from './entity/EntitySubject';\n\n\n/**\n * @class {EntityStore}\n */\nexport default class EntityStore {\n\n    /**\n     * Constructs entity store\n     * @param {Array} models - array of defined models\n     */\n    constructor(models) {\n        /**\n         * Saved array of models for resetting purposes\n         * @member {Array}\n         **/\n        this._modelsArray = models;\n        /**\n         * Object with models where key is model name and value is model instance\n         * @member {Object}\n         **/\n        this.models = {};\n        /**\n         * Object with entities where key is [model name][entity id] and value is entity state\n         * @member {Object}\n         **/\n        this.heap = {};\n        /**\n         * Object with subjects where key is [model name][entity id] and value is entity state\n         * @member {Object}\n         **/\n        this.observables = {};\n        this._setupModelsAndHeap(models);\n    }\n\n    /**\n     * Resolve all entities of model\n     * @param {string} model - name of model\n     * @returns {Array} - all kept entities as subject array\n     */\n    allEntities(model) {\n        return Object.keys(this.heap[model]).map(key => {\n            return this.getOrCreateEntitySubject(model, key);\n        })\n    }\n\n    /**\n     * Notifies all subscribers entity is updated\n     * @param {string} model - name of model\n     * @param {*} id - id of entity\n     * @param {Object} value - result state\n     * @param {EntitySubject} source - EntitySubject which caused update\n     * @param {string} message - optional message for debugging purposes\n     */\n    updateEntity(model, id, value, source, message = '') {\n        this.heap[model][id] = value;\n        this.entityUpdated(model, id, source);\n    }\n\n    /**\n     * Clears internal objects\n     * @param {*} models - array of defined models\n     */\n    _setupModelsAndHeap(models) {\n        models.forEach(model => {\n            this.models[model.name] = model;\n            this.heap[model.name] = {};\n            this.observables[model.name] = {};\n            model.attachStore(this);\n        });\n    }\n\n    /**\n     * Clears heap and observables\n     */\n    clear() {\n        this._setupModelsAndHeap(this._modelsArray);\n    }\n\n    /**\n     * Put or replace state of entity\n     * @param {string} model - name of model\n     * @param {*} id - entity id \n     * @param {Object} value - result state\n     */\n    putEntity(model, id, value) {\n        this.heap[model][id] = value;\n        this.getOrCreateEntitySubject(model, id).updateInterface();\n    }\n\n    /**\n     * Delete entity from heap\n     * @param {string} model - name of model\n     * @param {*} id - entity id\n     */\n    deleteEntity(model, id) {\n        delete this.heap[model][id];\n        this.getOrCreateEntitySubject(model, id).updateInterface();\n    }\n\n    /**\n     * Lazy EntitySubject evaluation\n     * @see {@link EntitySubject}\n     * @param {string} name - name of model\n     * @param {*} id - entity id\n     */\n    getOrCreateEntitySubject(name, id) {\n        const observable = this.observables[name][id];\n        if (observable)\n            return observable;\n        else\n            return this._createEntitySubject(name, id);\n    }\n\n    /**\n     * Create and return subject\n     * @see {@link EntityStore.getOrCreateEntitySubject}\n     * @param {string} model - name of model\n     * @param {*} id - entity id\n     */\n    _createEntitySubject(model, id) {\n        this.observables[model][id] = new EntitySubject(model, id, new Rx.Subject(), this.models[model], this);\n        return this.observables[model][id];\n    }\n\n\n    /**\n     * Called when need to force update entity\n     * @param {string} model - name of model\n     * @param {*} id - entity id\n     * @param {EntitySubject} source - cause of update\n     */\n    entityUpdated(model, id, source) {\n        this.getOrCreateEntitySubject(model, id).observable.next({\n            payload: this.heap[model][id],\n            source\n        });\n    }\n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/EntityStore.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "EntityStore",
+    "memberof": "src/EntityStore.js",
+    "static": true,
+    "longname": "src/EntityStore.js~EntityStore",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/EntityStore.js",
+    "importStyle": "EntityStore",
+    "description": "",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "{EntityStore}"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#constructor",
+    "access": "public",
+    "description": "Constructs entity store",
+    "lineNumber": 16,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "models",
+        "description": "array of defined models"
+      }
+    ]
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "_modelsArray",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#_modelsArray",
+    "access": "private",
+    "description": "Saved array of models for resetting purposes",
+    "lineNumber": 21,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "models",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#models",
+    "access": "public",
+    "description": "Object with models where key is model name and value is model instance",
+    "lineNumber": 26,
+    "type": {
+      "types": [
+        "{}"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "heap",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#heap",
+    "access": "public",
+    "description": "Object with entities where key is [model name][entity id] and value is entity state",
+    "lineNumber": 31,
+    "type": {
+      "types": [
+        "{}"
+      ]
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "observables",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#observables",
+    "access": "public",
+    "description": "Object with subjects where key is [model name][entity id] and value is entity state",
+    "lineNumber": 36,
+    "type": {
+      "types": [
+        "{}"
+      ]
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "name": "allEntities",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#allEntities",
+    "access": "public",
+    "description": "Resolve all entities of model",
+    "lineNumber": 45,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Array} - all kept entities as subject array"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "model",
+        "description": "name of model"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": "all kept entities as subject array"
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "method",
+    "name": "updateEntity",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#updateEntity",
+    "access": "public",
+    "description": "Notifies all subscribers entity is updated",
+    "lineNumber": 59,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "model",
+        "description": "name of model"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "id of entity"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "result state"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "EntitySubject"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "source",
+        "description": "EntitySubject which caused update"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": "optional message for debugging purposes"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "_setupModelsAndHeap",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#_setupModelsAndHeap",
+    "access": "private",
+    "description": "Clears internal objects",
+    "lineNumber": 68,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "models",
+        "description": "array of defined models"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "clear",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#clear",
+    "access": "public",
+    "description": "Clears heap and observables",
+    "lineNumber": 80,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "putEntity",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#putEntity",
+    "access": "public",
+    "description": "Put or replace state of entity",
+    "lineNumber": 90,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "model",
+        "description": "name of model"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "entity id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "result state"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "deleteEntity",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#deleteEntity",
+    "access": "public",
+    "description": "Delete entity from heap",
+    "lineNumber": 100,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "model",
+        "description": "name of model"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "entity id"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "getOrCreateEntitySubject",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#getOrCreateEntitySubject",
+    "access": "public",
+    "description": "Lazy EntitySubject evaluation",
+    "see": [
+      "{@link EntitySubject}"
+    ],
+    "lineNumber": 111,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "name of model"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "entity id"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "_createEntitySubject",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#_createEntitySubject",
+    "access": "private",
+    "description": "Create and return subject",
+    "see": [
+      "{@link EntityStore.getOrCreateEntitySubject}"
+    ],
+    "lineNumber": 125,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "model",
+        "description": "name of model"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "entity id"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "entityUpdated",
+    "memberof": "src/EntityStore.js~EntityStore",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/EntityStore.js~EntityStore#entityUpdated",
+    "access": "public",
+    "description": "Called when need to force update entity",
+    "lineNumber": 137,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "model",
+        "description": "name of model"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "entity id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "EntitySubject"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "source",
+        "description": "cause of update"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "file",
+    "name": "src/directory/Directory.js",
+    "content": "import Rx from 'rxjs/Rx'\nimport setComputedProperty from '../functions/setComputedProperty'\nimport * as TypeChecker from '../functions/typeChecker'\nimport {types} from '../entity/Model';\nimport DirectorySubject from './DirectorySubject';\n\nexport default class Directory {\n    constructor(name, options = { structure: {}, computed: {} }, store) {\n        this.name = name;\n        this.computed = options.computed || {};\n        this.structure = options.structure || {};\n        this.computed = options.computed || {};\n        this.mutations = options.mutations || {};\n        this.store = store;\n        this.state = {};\n        this.initialState(this.structure, this.state);\n        this.subject = new DirectorySubject(this, store);\n    }\n\n    clear(){\n        this.state = {};\n        this.initialState(this.structure, this.state);\n    }\n\n    initialState(structure, state){\n        Object.entries(structure).forEach(([key, value]) => {\n            if(TypeChecker.isAttribute(structure[key])){\n                state[key] = structure[key].default();\n            }else if(TypeChecker.isAttributeArray(structure[key])){\n                state[key] = [];\n            }else if(TypeChecker.isReference(structure[key])){\n                state[key] = null;\n            }else if(TypeChecker.isReferenceArray(structure[key])){\n                state[key] = [];\n            }else{\n                //object\n                state[key] = {};\n                this.initialState(structure[key], state[key])\n            }\n        })\n    }\n\n    observe(){\n        return this.subject;\n    }\n    \n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/directory/Directory.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 65,
+    "kind": "class",
+    "name": "Directory",
+    "memberof": "src/directory/Directory.js",
+    "static": true,
+    "longname": "src/directory/Directory.js~Directory",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/directory/Directory.js",
+    "importStyle": "Directory",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 66,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/directory/Directory.js~Directory",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "member",
+    "name": "name",
+    "memberof": "src/directory/Directory.js~Directory",
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#name",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "member",
+    "name": "computed",
+    "memberof": "src/directory/Directory.js~Directory",
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#computed",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "member",
+    "name": "structure",
+    "memberof": "src/directory/Directory.js~Directory",
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#structure",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "member",
+    "name": "mutations",
+    "memberof": "src/directory/Directory.js~Directory",
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#mutations",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "member",
+    "name": "store",
+    "memberof": "src/directory/Directory.js~Directory",
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#store",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "member",
+    "name": "state",
+    "memberof": "src/directory/Directory.js~Directory",
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#state",
+    "access": "public",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{}"
+      ]
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "member",
+    "name": "subject",
+    "memberof": "src/directory/Directory.js~Directory",
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#subject",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
+    "name": "clear",
+    "memberof": "src/directory/Directory.js~Directory",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#clear",
+    "access": "public",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 77,
+    "kind": "method",
+    "name": "initialState",
+    "memberof": "src/directory/Directory.js~Directory",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#initialState",
+    "access": "public",
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "params": [
+      {
+        "name": "structure",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 78,
+    "kind": "method",
+    "name": "observe",
+    "memberof": "src/directory/Directory.js~Directory",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#observe",
+    "access": "public",
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "file",
+    "name": "src/directory/DirectoryMutation.js",
+    "content": "// import R from 'ramda';\nimport * as R from 'ramda';\n\n\nexport default class DirectoryMutation{\n    constructor(subject, payload){\n        this.subject = subject;\n        const originalState = subject.directory.state;\n        this.resultState =  R.mergeDeepRight(originalState, payload);\n    }\n\n    commit(message){\n        this.subject.directory.state = this.resultState;\n        this.subject.update();\n    }\n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/directory/DirectoryMutation.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 80,
+    "kind": "class",
+    "name": "DirectoryMutation",
+    "memberof": "src/directory/DirectoryMutation.js",
+    "static": true,
+    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/directory/DirectoryMutation.js",
+    "importStyle": "DirectoryMutation",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 81,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "member",
+    "name": "subject",
+    "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
+    "static": false,
+    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#subject",
+    "access": "public",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "member",
+    "name": "resultState",
+    "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
+    "static": false,
+    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#resultState",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "method",
+    "name": "commit",
+    "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#commit",
+    "access": "public",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "params": [
+      {
+        "name": "message",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 85,
+    "kind": "file",
+    "name": "src/directory/DirectorySubject.js",
+    "content": "import * as R from 'ramda';\n\nimport * as TypeChecker from '../functions/typeChecker';\nimport DirectoryMutation from './DirectoryMutation';\nimport Rx from 'rxjs/Rx';\nimport extendArray from '../functions/extendArray';\nimport createReactiveInterface from '../functions/createReactiveInterface';\n\nexport default class {\n    constructor(directory, store) {\n        this.directory = directory;\n        this.store = store;\n        this.subscriptions = {};\n        this.observable = new Rx.Subject();\n        Object.entries(store.models).forEach(([key, value]) => {\n            this.subscriptions[key] = {};\n        });\n\n        this.observable.subscribe(_ => {\n            this.updateInterface();\n        })\n\n        this.interface = null;\n        this.updateInterface();\n    }\n\n    updateInterface() {\n        this.interface = this.createReactiveInterface();\n    }\n\n    mutate(mutation, message = \"\") {\n        new DirectoryMutation(this, mutation).commit(message)\n\n    }\n\n    _asObject(structure, item, deepness) {\n        const json = {};\n        Object.entries(structure).forEach(([key, value]) => {\n            if (TypeChecker.isAttribute(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isAttributeArray(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isReference(structure[key])) {\n                if (deepness > 0 && item[key])\n                    json[key] = item[key].$subject.asObject(deepness - 1);\n                else\n                    json[key] = null;\n            } else if (TypeChecker.isReferenceArray(structure[key])) {\n                if (deepness > 0)\n                    json[key] = item[key].map(inter => {\n                        return inter.$subject.asObject(deepness - 1);\n                    })\n                else\n                    json[key] = [];\n            } else if (TypeChecker.isIdentifier(structure[key])) {\n                json[key] = item[key];\n            } else {\n                //object\n                json[key] = this._asObject(structure[key], item[key], deepness);\n            }\n        })\n\n        return json;\n    }\n\n    asObject(relationDeepness) {\n        if (this.interface){\n            const result = this._asObject(this.directory.structure, this.interface, relationDeepness)\n            this._applyComputed(result);\n            return result;\n        }else\n            return null;\n    }\n\n    update() {\n        this.observable.next(this.state);\n    }\n\n\n\n    createReactiveInterface() {\n        const get = (key) => {\n            return this.directory.state[key];\n        }\n        const set = (key, value) => {\n            this.mutate({\n                [key]: value\n            }, `Modify ${key} with value ${value}`)\n        }\n        const reactiveInterface = {};\n        this._mapObserverToSource(reactiveInterface, this.directory.structure, {\n            get,\n            set\n        });\n        this._applyComputed(reactiveInterface);\n        this._applyMutations(reactiveInterface);\n        return reactiveInterface;\n    }\n\n\n    _applyComputed(reactiveInterface){\n        Object.entries(this.directory.computed).forEach(([key, value]) => {\n            reactiveInterface[key] = value.call(reactiveInterface)\n        });\n    }\n\n    _applyMutations(reactiveInterface){\n        Object.entries(this.directory.mutations).forEach(([key, value]) => {\n            reactiveInterface[key] = value.bind(reactiveInterface)\n        })\n    }\n\n\n    _mapObserverToSource(item = {}, structure, stateProvider) {\n        const store = this.store;\n        const directorySubject = this;\n        createReactiveInterface({\n            item: item,\n            stateProvider: stateProvider,\n            store: this.store,\n            updateState(source){\n                directorySubject.update();\n            },\n            structure: this.directory.structure,\n            subscribe(name, id){\n                if (!directorySubject.isSubscriberOf(name, id)) {\n                    directorySubject.subscribe(name, id)(({ payload, source }) => {\n                        directorySubject.update();\n                    });\n                }\n            },\n            unsubscribe(name, id){\n                directorySubject.unsubscribe(name, id)\n            }\n        });\n    }\n\n    equals(directorySubject) {\n        return this === directorySubject;\n    }\n\n\n    isSubscriberOf(name, id) {\n        return this.subscriptions[name][id];\n    }\n\n    subscribe(name, id) {\n        return (a, b, c) => {\n            this.subscriptions[name][id] = this.store.getOrCreateEntitySubject(name, id).observable\n                .filter(({ payload, source }) => source !== this)\n                .subscribe(a, b, c);\n        }\n    }\n\n    unsubscribe(name, id) {\n        if (this.subscriptions[name][id]) {\n            this.subscriptions[name][id].unsubscribe();\n        }\n        delete this.subscriptions[name][id];\n    }\n\n\n    toString() {\n        return `\"#${this.name}\"`\n    }\n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/directory/DirectorySubject.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 86,
+    "kind": "class",
+    "name": "DirectorySubject",
+    "memberof": "src/directory/DirectorySubject.js",
+    "static": true,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/directory/DirectorySubject.js",
+    "importStyle": "DirectorySubject",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 87,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "member",
+    "name": "directory",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#directory",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "member",
+    "name": "store",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#store",
+    "access": "public",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "member",
+    "name": "subscriptions",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#subscriptions",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{}"
+      ]
+    }
+  },
+  {
+    "__docId__": 91,
+    "kind": "member",
+    "name": "observable",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#observable",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "member",
+    "name": "interface",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#interface",
+    "access": "public",
+    "description": null,
+    "lineNumber": 23,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 93,
+    "kind": "method",
+    "name": "updateInterface",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#updateInterface",
+    "access": "public",
+    "description": null,
+    "lineNumber": 27,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 95,
+    "kind": "method",
+    "name": "mutate",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#mutate",
+    "access": "public",
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "params": [
+      {
+        "name": "mutation",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "message",
+        "optional": true,
+        "types": [
+          "string"
+        ],
+        "defaultRaw": "",
+        "defaultValue": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 96,
+    "kind": "method",
+    "name": "_asObject",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#_asObject",
+    "access": "private",
+    "description": null,
+    "lineNumber": 36,
+    "undocument": true,
+    "params": [
+      {
+        "name": "structure",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "deepness",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 97,
+    "kind": "method",
+    "name": "asObject",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#asObject",
+    "access": "public",
+    "description": null,
+    "lineNumber": 66,
+    "undocument": true,
+    "params": [
+      {
+        "name": "relationDeepness",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "method",
+    "name": "update",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#update",
+    "access": "public",
+    "description": null,
+    "lineNumber": 75,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 99,
+    "kind": "method",
+    "name": "createReactiveInterface",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#createReactiveInterface",
+    "access": "public",
+    "description": null,
+    "lineNumber": 81,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "method",
+    "name": "_applyComputed",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#_applyComputed",
+    "access": "private",
+    "description": null,
+    "lineNumber": 101,
+    "undocument": true,
+    "params": [
+      {
+        "name": "reactiveInterface",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 101,
+    "kind": "method",
+    "name": "_applyMutations",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#_applyMutations",
+    "access": "private",
+    "description": null,
+    "lineNumber": 107,
+    "undocument": true,
+    "params": [
+      {
+        "name": "reactiveInterface",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 102,
+    "kind": "method",
+    "name": "_mapObserverToSource",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#_mapObserverToSource",
+    "access": "private",
+    "description": null,
+    "lineNumber": 114,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "optional": true,
+        "types": [
+          "{}"
+        ],
+        "defaultRaw": {},
+        "defaultValue": "{}"
+      },
+      {
+        "name": "structure",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "stateProvider",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 103,
+    "kind": "method",
+    "name": "equals",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#equals",
+    "access": "public",
+    "description": null,
+    "lineNumber": 138,
+    "undocument": true,
+    "params": [
+      {
+        "name": "directorySubject",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 104,
+    "kind": "method",
+    "name": "isSubscriberOf",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#isSubscriberOf",
+    "access": "public",
+    "description": null,
+    "lineNumber": 143,
+    "undocument": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "method",
+    "name": "subscribe",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#subscribe",
+    "access": "public",
+    "description": null,
+    "lineNumber": 147,
+    "undocument": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 106,
+    "kind": "method",
+    "name": "unsubscribe",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#unsubscribe",
+    "access": "public",
+    "description": null,
+    "lineNumber": 155,
+    "undocument": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 107,
+    "kind": "method",
+    "name": "toString",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#toString",
+    "access": "public",
+    "description": null,
+    "lineNumber": 163,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 108,
+    "kind": "file",
+    "name": "src/entity/EntitySubject.js",
+    "content": "import * as R from 'ramda';\nimport * as TypeChecker from '../functions/typeChecker';\nimport Mutation from './Mutation';\nimport isNumber from 'is-number'\nimport createReactiveInterface from '../functions/createReactiveInterface';\n\n/**\n * @class {EntitySubject}\n */\nexport default class EntitySubject{\n    constructor(name, id, observable, model, store) {\n        this.name = name;\n        this.id = id;\n        this.model = model;\n        this.observable = observable;\n        this.store = store;\n        this.subscriptions = {};\n        Object.entries(store.models).forEach(([key, value]) => {\n            this.subscriptions[key] = {};\n        });\n\n        this.interface = this.createReactiveInterface();\n\n        this.subscriptions[name][id] = this.observable.filter(({ payload, source }) => source !== this);\n        this.subscriptions[name][id].subscribe(({ payload, source }) => {\n            this.updateInterface();\n        }, error => {\n\n        }, complete => {\n\n        });\n    }\n\n    updateInterface() {\n        this.interface = this.createReactiveInterface();\n    }\n\n    _asObject(structure, item, deepness) {\n        const json = {};\n        Object.entries(structure).forEach(([key, value]) => {\n            if (TypeChecker.isAttribute(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isAttributeArray(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isReference(structure[key])) {\n                if (deepness > 0 && item[key])\n                    json[key] = item[key].$subject.asObject(deepness - 1);\n                else\n                    json[key] = null;\n            } else if (TypeChecker.isReferenceArray(structure[key])) {\n                if (deepness > 0)\n                    json[key] = item[key].map(inter => {\n                        return inter.$subject.asObject(deepness - 1);\n                    })\n                else\n                    json[key] = [];\n            } else if (TypeChecker.isIdentifier(structure[key])) {\n                json[key] = item[key];\n            } else {\n                //object\n                json[key] = this._asObject(structure[key], item[key], deepness);\n            }\n        })\n\n        return json;\n    }\n\n    asObject(relationDeepness) {\n        if (this.interface){\n            const result = this._asObject(this.model.structure, this.interface, relationDeepness)\n            this._applyComputed(result);\n            return result;\n        }else\n            return null;\n    }\n\n    mutate(mutation, message = \"\") {\n        if (this.store.heap[this.name][this.id]) {\n            new Mutation(this, mutation).commit(message)\n        } else {\n            throw new Error(`Trying to modify not existing entity`);\n        }\n    }\n\n\n    createReactiveInterface() {\n        if (this.store.heap[this.name][this.id]) {\n            const get = (key) => {\n                if (this.store.heap[this.name][this.id])\n                    return this.store.heap[this.name][this.id][key];\n                else\n                    throw new Error(`Trying to read not existing entity`)\n            }\n            const set = (key, value) => {\n                this.mutate({\n                    [key]: value\n                }, `Modify ${key} with value ${value}`)\n            }\n            const reactiveInterface = {};\n            this._mapObserverToSource(reactiveInterface, this.model.structure, {\n                get,\n                set\n            });\n            this._applyComputed(reactiveInterface);\n            this._applyMutations(reactiveInterface);\n\n            reactiveInterface.$subject = this;\n            return reactiveInterface;\n        } else {\n            return null;\n        }\n    }\n\n\n    _applyComputed(reactiveInterface) {\n        Object.entries(this.model.computed).forEach(([key, value]) => {\n            reactiveInterface[key] = value.call(reactiveInterface)\n        });\n    }\n\n    _applyMutations(reactiveInterface) {\n        Object.entries(this.model.mutations).forEach(([key, value]) => {\n            reactiveInterface[key] = value.bind(reactiveInterface)\n        })\n    }\n\n    _processReference(value, stateProvider) {\n        if (isNumber(value)) {\n            return value;\n        } else if (value == null) {\n            return value;\n        } else if ('id' in value && isNumber(value.id)) {\n            return value.id\n        } else {\n            throw new Error(\"Invalid reference: expected id, null or subject\")\n        }\n    }\n\n    _mapObserverToSource(item = {}, structure, stateProvider) {\n        const entitySubject = this;\n        return createReactiveInterface({\n            item: item,\n            stateProvider: stateProvider,\n            store: this.store,\n            updateState(source){\n                this.store.entityUpdated(entitySubject.name, entitySubject.id, source);\n            },\n            structure: this.model.structure,\n            subscribe(name, id){\n                if (!entitySubject.isSubscriberOf(name, id)) {\n                    entitySubject.subscribe(name, id)(({ payload, source }) => {\n                        entitySubject.store.entityUpdated(entitySubject.name, entitySubject.id, source);                        \n                    });\n                }\n            },\n            unsubscribe(name, id){\n                entitySubject.unsubscribe(name, id)\n            }\n        })\n    }\n\n    equals(entitySubject) {\n        return this === entitySubject;\n    }\n\n\n    isSubscriberOf(name, id) {\n        return this.subscriptions[name][id];\n    }\n\n    subscribe(name, id) {\n        return (a, b, c) => {\n            this.subscriptions[name][id] = this.store.getOrCreateEntitySubject(name, id).observable\n                .filter(({ payload, source }) => source !== this)\n                .subscribe(a, b, c);\n        }\n    }\n\n    unsubscribe(name, id) {\n        if (this.subscriptions[name][id]) {\n            this.subscriptions[name][id].unsubscribe();\n        }\n        delete this.subscriptions[name][id];\n    }\n\n\n    toString() {\n        return `\"${this.name}.${this.id}\"`\n    }\n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/entity/EntitySubject.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 109,
+    "kind": "class",
+    "name": "EntitySubject",
+    "memberof": "src/entity/EntitySubject.js",
+    "static": true,
+    "longname": "src/entity/EntitySubject.js~EntitySubject",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/entity/EntitySubject.js",
+    "importStyle": "EntitySubject",
+    "description": "",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "{EntitySubject}"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 110,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true
+  },
+  {
+    "__docId__": 111,
+    "kind": "member",
+    "name": "name",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#name",
+    "access": "public",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "member",
+    "name": "id",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#id",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 113,
+    "kind": "member",
+    "name": "model",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#model",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 114,
+    "kind": "member",
+    "name": "observable",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#observable",
+    "access": "public",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 115,
+    "kind": "member",
+    "name": "store",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#store",
+    "access": "public",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 116,
+    "kind": "member",
+    "name": "subscriptions",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#subscriptions",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{}"
+      ]
+    }
+  },
+  {
+    "__docId__": 117,
+    "kind": "member",
+    "name": "interface",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#interface",
+    "access": "public",
+    "description": null,
+    "lineNumber": 22,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 118,
+    "kind": "method",
+    "name": "updateInterface",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#updateInterface",
+    "access": "public",
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 120,
+    "kind": "method",
+    "name": "_asObject",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#_asObject",
+    "access": "private",
+    "description": null,
+    "lineNumber": 38,
+    "undocument": true,
+    "params": [
+      {
+        "name": "structure",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "deepness",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 121,
+    "kind": "method",
+    "name": "asObject",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#asObject",
+    "access": "public",
+    "description": null,
+    "lineNumber": 68,
+    "undocument": true,
+    "params": [
+      {
+        "name": "relationDeepness",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 122,
+    "kind": "method",
+    "name": "mutate",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#mutate",
+    "access": "public",
+    "description": null,
+    "lineNumber": 77,
+    "undocument": true,
+    "params": [
+      {
+        "name": "mutation",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "message",
+        "optional": true,
+        "types": [
+          "string"
+        ],
+        "defaultRaw": "",
+        "defaultValue": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 123,
+    "kind": "method",
+    "name": "createReactiveInterface",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#createReactiveInterface",
+    "access": "public",
+    "description": null,
+    "lineNumber": 86,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 124,
+    "kind": "method",
+    "name": "_applyComputed",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#_applyComputed",
+    "access": "private",
+    "description": null,
+    "lineNumber": 115,
+    "undocument": true,
+    "params": [
+      {
+        "name": "reactiveInterface",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 125,
+    "kind": "method",
+    "name": "_applyMutations",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#_applyMutations",
+    "access": "private",
+    "description": null,
+    "lineNumber": 121,
+    "undocument": true,
+    "params": [
+      {
+        "name": "reactiveInterface",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 126,
+    "kind": "method",
+    "name": "_processReference",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#_processReference",
+    "access": "private",
+    "description": null,
+    "lineNumber": 127,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "stateProvider",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 127,
+    "kind": "method",
+    "name": "_mapObserverToSource",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#_mapObserverToSource",
+    "access": "private",
+    "description": null,
+    "lineNumber": 139,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "optional": true,
+        "types": [
+          "{}"
+        ],
+        "defaultRaw": {},
+        "defaultValue": "{}"
+      },
+      {
+        "name": "structure",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "stateProvider",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 128,
+    "kind": "method",
+    "name": "equals",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#equals",
+    "access": "public",
+    "description": null,
+    "lineNumber": 162,
+    "undocument": true,
+    "params": [
+      {
+        "name": "entitySubject",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 129,
+    "kind": "method",
+    "name": "isSubscriberOf",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#isSubscriberOf",
+    "access": "public",
+    "description": null,
+    "lineNumber": 167,
+    "undocument": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 130,
+    "kind": "method",
+    "name": "subscribe",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#subscribe",
+    "access": "public",
+    "description": null,
+    "lineNumber": 171,
+    "undocument": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 131,
+    "kind": "method",
+    "name": "unsubscribe",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#unsubscribe",
+    "access": "public",
+    "description": null,
+    "lineNumber": 179,
+    "undocument": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 132,
+    "kind": "method",
+    "name": "toString",
+    "memberof": "src/entity/EntitySubject.js~EntitySubject",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/EntitySubject.js~EntitySubject#toString",
+    "access": "public",
+    "description": null,
+    "lineNumber": 187,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 133,
+    "kind": "file",
+    "name": "src/entity/Model.js",
+    "content": "import Rx from 'rxjs/Rx'\nimport setComputedProperty from '../functions/setComputedProperty'\nimport types from '../types';\nimport * as TypeChecker from '../functions/typeChecker';\n\nexport default class Model {\n    constructor(name, options = { structure: {}, computed: {}, mutations: {} }) {\n        this.name = name;\n        this.computed = options.computed || {};\n        this.structure = options.structure || {};\n        this.mutations = options.mutations || {};\n        this.structure.id = types.Identifier;\n        this.store = null;\n    }\n\n    attachStore(store) {\n        this.store = store;\n    }\n\n    allEntities(){\n        return this.store.allEntities(this.name);\n    }\n\n    fillDefaultValues(structure, item){\n        Object.entries(structure).forEach(([key, value]) => {\n            if(TypeChecker.isAttribute(structure[key])){\n                if(!(key in item))\n                    item[key] = structure[key].default();\n            }else if(TypeChecker.isReference(structure[key])){\n                if(!(key in item))\n                    item[key] = structure[key].default();\n            }else if(TypeChecker.isReferenceArray(structure[key])){\n                if(!(key in item))\n                    item[key] = structure[key].default();\n            }else if(TypeChecker.isAttributeArray(structure[key]) ){\n                if(!(key in item))\n                    item[key] = structure[key].default();\n            }else if(TypeChecker.isIdentifier(structure[key])){\n                // we check this already\n            }else{\n                if(!(key in item))\n                    item[key] = {};\n                this.fillDefaultValues(structure[key], item[key]);\n            }\n        });\n    }\n\n    insertEntity(id, item) {\n        if(id){\n            const emptyItem = {};\n            this.fillDefaultValues(this.structure, emptyItem);\n            this.fillDefaultValues(this.structure, item);\n            emptyItem['id'] = id;\n            item['id'] = id;\n            this.store.putEntity(this.name, id, emptyItem);\n            this.store.putEntity(this.name, id, item);\n        }else{\n            throw new Error(\"Entity's id cannot be null or zero\");\n        }\n    }\n\n    observe(id){\n        if(this.store){\n            return this.store.getOrCreateEntitySubject(this.name, id);\n        }else{\n            throw new Error(`Model ${this.name} is not attached to a store.`)\n        }\n    }\n    \n}\n\n",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/entity/Model.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 134,
+    "kind": "class",
+    "name": "Model",
+    "memberof": "src/entity/Model.js",
+    "static": true,
+    "longname": "src/entity/Model.js~Model",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/entity/Model.js",
+    "importStyle": "Model",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 135,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/entity/Model.js~Model",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/Model.js~Model#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true
+  },
+  {
+    "__docId__": 136,
+    "kind": "member",
+    "name": "name",
+    "memberof": "src/entity/Model.js~Model",
+    "static": false,
+    "longname": "src/entity/Model.js~Model#name",
+    "access": "public",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 137,
+    "kind": "member",
+    "name": "computed",
+    "memberof": "src/entity/Model.js~Model",
+    "static": false,
+    "longname": "src/entity/Model.js~Model#computed",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 138,
+    "kind": "member",
+    "name": "structure",
+    "memberof": "src/entity/Model.js~Model",
+    "static": false,
+    "longname": "src/entity/Model.js~Model#structure",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 139,
+    "kind": "member",
+    "name": "mutations",
+    "memberof": "src/entity/Model.js~Model",
+    "static": false,
+    "longname": "src/entity/Model.js~Model#mutations",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 140,
+    "kind": "member",
+    "name": "store",
+    "memberof": "src/entity/Model.js~Model",
+    "static": false,
+    "longname": "src/entity/Model.js~Model#store",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 141,
+    "kind": "method",
+    "name": "attachStore",
+    "memberof": "src/entity/Model.js~Model",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/Model.js~Model#attachStore",
+    "access": "public",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "params": [
+      {
+        "name": "store",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 143,
+    "kind": "method",
+    "name": "allEntities",
+    "memberof": "src/entity/Model.js~Model",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/Model.js~Model#allEntities",
+    "access": "public",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 144,
+    "kind": "method",
+    "name": "fillDefaultValues",
+    "memberof": "src/entity/Model.js~Model",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/Model.js~Model#fillDefaultValues",
+    "access": "public",
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "params": [
+      {
+        "name": "structure",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 145,
+    "kind": "method",
+    "name": "insertEntity",
+    "memberof": "src/entity/Model.js~Model",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/Model.js~Model#insertEntity",
+    "access": "public",
+    "description": null,
+    "lineNumber": 48,
+    "undocument": true,
+    "params": [
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 146,
+    "kind": "method",
+    "name": "observe",
+    "memberof": "src/entity/Model.js~Model",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/Model.js~Model#observe",
+    "access": "public",
+    "description": null,
+    "lineNumber": 62,
+    "undocument": true,
+    "params": [
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 147,
+    "kind": "file",
+    "name": "src/entity/Mutation.js",
+    "content": "import * as R from 'ramda';\n\nexport default class Mutation{\n    constructor(subject, payload){\n        this.subject = subject;\n        const originalState = subject.store.heap[subject.name][subject.id];\n        delete payload.id; // we just don't want to modify id, right?\n        this.resultState =  R.mergeDeepRight(originalState, payload);\n    }\n\n    commit(message){\n        this.subject.store.updateEntity(this.subject.name, this.subject.id, this.resultState, this.subject, message);\n    }\n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/entity/Mutation.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 148,
+    "kind": "class",
+    "name": "Mutation",
+    "memberof": "src/entity/Mutation.js",
+    "static": true,
+    "longname": "src/entity/Mutation.js~Mutation",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/entity/Mutation.js",
+    "importStyle": "Mutation",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 149,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/entity/Mutation.js~Mutation",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/Mutation.js~Mutation#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true
+  },
+  {
+    "__docId__": 150,
+    "kind": "member",
+    "name": "subject",
+    "memberof": "src/entity/Mutation.js~Mutation",
+    "static": false,
+    "longname": "src/entity/Mutation.js~Mutation#subject",
+    "access": "public",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 151,
+    "kind": "member",
+    "name": "resultState",
+    "memberof": "src/entity/Mutation.js~Mutation",
+    "static": false,
+    "longname": "src/entity/Mutation.js~Mutation#resultState",
+    "access": "public",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 152,
+    "kind": "method",
+    "name": "commit",
+    "memberof": "src/entity/Mutation.js~Mutation",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/entity/Mutation.js~Mutation#commit",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "params": [
+      {
+        "name": "message",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 153,
+    "kind": "file",
+    "name": "src/functions/createReactiveInterface.js",
+    "content": "import * as TypeChecker from './typeChecker';\nimport * as R from 'ramda';\nimport isNumber from 'is-number';\n\nconst _processReference = (value, stateProvider) => {\n    if (isNumber(value)) {\n        return value;\n    } else if (value == null) {\n        return value;\n    } else if ('id' in value && isNumber(value.id)) {\n        return value.id\n    } else {\n        throw new Error(\"Invalid reference: expected id, null or subject\")\n    }\n}\nconst createReactiveInterface =  ({ item, stateProvider, store, updateState, structure, subscribe, unsubscribe }) => {\n    Object.entries(structure).forEach(([key, value]) => {\n        if (TypeChecker.isAttribute(structure[key])) {\n            Object.defineProperty(item, key, {\n                get() {\n                    return stateProvider.get(key);\n                },\n                set(value) {\n                    stateProvider.set(key, value);\n                }\n            })\n        } else if (TypeChecker.isReference(structure[key])) {\n            const relationName = structure[key].model;\n            const relationID = stateProvider.get(key);\n            let initialSubject = null;\n            if (relationID) {\n                initialSubject = store.getOrCreateEntitySubject(relationName, relationID);\n                subscribe(relationName, relationID);     \n            }\n            Object.defineProperty(item, key, {\n                get() {\n                    return R.path(['interface'], initialSubject);\n                },\n                set(value) {\n                    if (initialSubject) {\n                        unsubscribe(relationName, initialSubject.id);\n                    }\n\n                    const refID = _processReference(value, stateProvider);\n                    stateProvider.set(key, refID);\n                    if (refID) {\n                        initialSubject = store.getOrCreateEntitySubject(relationName, refID);\n                        subscribe(relationName, relationID);\n                    }\n                }\n            })\n        } else if (TypeChecker.isAttributeArray(structure[key])) {\n            Object.defineProperty(item, key, {\n                get() {\n                    return stateProvider.get(key);\n                },\n                set(value) {\n                    stateProvider.set(key, value);\n                }\n            })\n        } else if (TypeChecker.isReferenceArray(structure[key])) {\n            const relationName = structure[key].arrayOfType.model;\n            const relationIDs = stateProvider.get(key);\n            let subjects = [];\n            subjects = relationIDs.map(relationID => {\n                const subject = store.getOrCreateEntitySubject(relationName, relationID);\n                subscribe(relationName, relationID)\n                return subject;\n            });\n            Object.defineProperty(item, key, {\n                get() {\n                    return subjects.map(it => it.interface);\n                },\n                set(relationIDs) {\n                    subjects.forEach(subject => {\n                        unsubscribe(relationName, subject.id);\n                    });\n                    subjects = relationIDs.map(value => {\n                        const refID = _processReference(value, stateProvider);\n                        if (refID) {\n                            const initialSubject = store.getOrCreateEntitySubject(relationName, refID);\n                            subscribe(relationName, refID);\n                            return initialSubject;\n                        }\n                    });\n                    stateProvider.set(key, subjects.map(it => it.id));\n                }\n            })\n        } else if (TypeChecker.isIdentifier(structure[key])) {\n            Object.defineProperty(item, key, {\n                get() {\n                    \n                    return stateProvider.get('id')\n                },\n                set(value) {\n\n                }\n            })\n        } else {\n            const get = (key2) => {\n                if (stateProvider.get(key))\n                    return stateProvider.get(key)[key2];\n                else\n                    throw new Error(`Trying to read not existing entity`)\n            }\n            const set = (key2, value) => {\n                stateProvider.set(key, {\n                    [key2]: value\n                })\n            }\n\n            item[key] = createReactiveInterface({\n                item: {},\n                stateProvider: {\n                    get,\n                    set\n                },\n                store: store,\n                updateState: updateState,\n                structure: structure[key],\n                subscribe: subscribe,\n                unsubscribe: unsubscribe\n            })\n\n        }\n    });\n    return item;\n}\n\nexport default createReactiveInterface;",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/functions/createReactiveInterface.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 154,
+    "kind": "function",
+    "name": "_processReference",
+    "memberof": "src/functions/createReactiveInterface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/functions/createReactiveInterface.js~_processReference",
+    "access": "private",
+    "export": false,
+    "importPath": "vibejs/src/functions/createReactiveInterface.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "stateProvider",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 155,
+    "kind": "function",
+    "name": "createReactiveInterface",
+    "memberof": "src/functions/createReactiveInterface.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/functions/createReactiveInterface.js~createReactiveInterface",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/functions/createReactiveInterface.js",
+    "importStyle": "createReactiveInterface",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"item\": *, \"stateProvider\": *, \"store\": *, \"updateState\": *, \"structure\": *, \"subscribe\": *, \"unsubscribe\": *}"
+        ],
+        "defaultRaw": {
+          "item": null,
+          "stateProvider": null,
+          "store": null,
+          "updateState": null,
+          "structure": null,
+          "subscribe": null,
+          "unsubscribe": null
+        },
+        "defaultValue": "{\"item\":null,\"stateProvider\":null,\"store\":null,\"updateState\":null,\"structure\":null,\"subscribe\":null,\"unsubscribe\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 156,
+    "kind": "file",
+    "name": "src/functions/extendArray.js",
+    "content": "export default (arrayToExtend, onNewArray) => {\n    arrayToExtend.push = function (item) {\n        const newArray = arrayToExtend.concat([item]);\n        onNewArray(newArray);\n    }\n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/functions/extendArray.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 157,
+    "kind": "function",
+    "name": "extendArray",
+    "memberof": "src/functions/extendArray.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/functions/extendArray.js~extendArray",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/functions/extendArray.js",
+    "importStyle": "extendArray",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "arrayToExtend",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "onNewArray",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 158,
+    "kind": "file",
+    "name": "src/functions/setComputedProperty.js",
+    "content": "export default function setComputedProperty(item, key, computer){\n    Object.defineProperty(item, key, {\n        get(){\n            try{\n                return computer.bind(item)()\n            }catch(e){\n                return null;\n            }\n        },\n        set(val){\n            // ignore, immutable\n        }\n    });\n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/functions/setComputedProperty.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 159,
+    "kind": "function",
+    "name": "setComputedProperty",
+    "memberof": "src/functions/setComputedProperty.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/functions/setComputedProperty.js~setComputedProperty",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/functions/setComputedProperty.js",
+    "importStyle": "setComputedProperty",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "computer",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 160,
+    "kind": "file",
+    "name": "src/functions/typeChecker.js",
+    "content": "import types from '../types';\n\nexport const isAttribute = (type) => {\n    return types.Attribute.type === type.type;\n}\n\n\n\nexport const isIdentifier = (type) => {\n    return type.type === types.Identifier.type;\n}\n\nexport const isReference = (type) => {\n    return type.type === types.Reference().type;\n}\n\n\nexport const isAttributeArray = (type) => {\n    return type.type === types.Array().type && type.arrayOfType.type !== types.Reference().type;\n}\n\n\nexport const isReferenceArray = (type) => {\n    return type.type === types.Array().type && type.arrayOfType.type === types.Reference().type;\n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/functions/typeChecker.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 161,
+    "kind": "function",
+    "name": "isAttribute",
+    "memberof": "src/functions/typeChecker.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/functions/typeChecker.js~isAttribute",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/functions/typeChecker.js",
+    "importStyle": "{isAttribute}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "type",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 162,
+    "kind": "function",
+    "name": "isIdentifier",
+    "memberof": "src/functions/typeChecker.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/functions/typeChecker.js~isIdentifier",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/functions/typeChecker.js",
+    "importStyle": "{isIdentifier}",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "params": [
+      {
+        "name": "type",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 163,
+    "kind": "function",
+    "name": "isReference",
+    "memberof": "src/functions/typeChecker.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/functions/typeChecker.js~isReference",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/functions/typeChecker.js",
+    "importStyle": "{isReference}",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "params": [
+      {
+        "name": "type",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 164,
+    "kind": "function",
+    "name": "isAttributeArray",
+    "memberof": "src/functions/typeChecker.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/functions/typeChecker.js~isAttributeArray",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/functions/typeChecker.js",
+    "importStyle": "{isAttributeArray}",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "params": [
+      {
+        "name": "type",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 165,
+    "kind": "function",
+    "name": "isReferenceArray",
+    "memberof": "src/functions/typeChecker.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/functions/typeChecker.js~isReferenceArray",
+    "access": "public",
+    "export": true,
+    "importPath": "vibejs/src/functions/typeChecker.js",
+    "importStyle": "{isReferenceArray}",
+    "description": null,
+    "lineNumber": 23,
+    "undocument": true,
+    "params": [
+      {
+        "name": "type",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 166,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "/**\n * \n */\n\nimport Model from './entity/Model';\nimport EntitySubject from './entity/EntitySubject';\nimport Mutation from './entity/Mutation';\n\n/**\n * \n */\n\nimport EntityStore from './EntityStore'\n\nimport Directory from './directory/Directory';\nimport DirectorySubject from './directory/DirectorySubject';\nimport DirectoryMutation from './directory/DirectoryMutation';\n\nimport types from './types'\n\nexport default {\n    Model,\n    EntitySubject,\n    EntityMutation: Mutation,\n    Directory,\n    DirectorySubject,\n    DirectoryMutation,\n    EntityStore,\n    types\n}\n\n",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 167,
+    "kind": "file",
+    "name": "src/types.js",
+    "content": "\nexport default  {\n    Attribute: {\n        type: 'Attribute',\n        default() {\n            return null;\n        }\n    },\n    Identifier: {\n        type: 'Identifier',\n    },\n    Array: (Type) => {\n        return {\n            type: 'Array',\n            arrayOfType: Type,\n            check(value) {\n                return Array.isArray(value) && (value.length === 0 || this.arrayOfType.check(value[0]));\n            },\n            default() {\n                return [];\n            }\n        }\n    },\n    Reference: (Model) => {\n        return {\n            type: 'Reference',\n            model: Model,\n            default() {\n                return null;\n            },\n            check(value) {\n                const isNumber = (v) => typeof (v) === 'number' || v instanceof Number\n                return isNumber(value) || !value || isNumber(value.id)\n            }\n        }\n    }\n}",
+    "static": true,
+    "longname": "/home/enchanting/Work/vibejs/src/types.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "kind": "index",
+    "content": "# Vibe.js\n\n## Install\n\n`yarn add vibejs`\n\n`npm install vibejs`\n\n## Tests\n\n`yarn test`\n\nFor now vibejs has 29 tests.\n\nHi there, this is reactive state management tool for JavaScript.\n\nThere are 3 core concepts:\n1) Model and EntitySubject\n2) EntityStore\n3) Directory and DirectorySubject\n\n## Model\n\nModel is description of entity.\n\nYou can describe it like this:\n```js\nconst User = new Model('User', {\n    structure: {\n        name: types.Attribute,\n        mother: types.Reference('User'), // reference to entity with name 'User'\n        mother: types.Reference('User'), //same\n        wrappedValues: { // you can create wrapped structures\n            age: types.Attribute\n        }\n    },\n    computed: {\n        upperCaseName(){\n            return this.name.toUpperCase()\n        }\n    },\n    mutations: {\n        setName(newName){\n            this.name = newName;\n        }\n    }\n});\n```\n\nAfter this, you can insert new entity and observe it.\n\n```js\nUser.insertEntity(1, {\n    name: \"Elon Musk\",\n    mother: 2, // reference by id,\n    father: User.observe(3).interface, // or by subject interface\n    wrappedValues: {\n        age: 46\n    } \n});\nconst subject = User.observe(1);\n```\n\nWhat happens:\n1) You push json into model's `insertEntity` method\n2) Model checks its structure and sets default if not set\n3) Model pushes entity into store\n4) Store notifies everybody, who is observing entity of type `User` and `id=1`.\n\nAnd now we got subject. In vibejs subject is object to work with entity.\n\n\nAt this point you already can use `subject` to access and change reactive entity's data. For example\n\n```js\nUser.insertEntity(5, {\n    name: \"Errol Musk\",\n});\nconst reactiveInterface = subject.interface;\nreactiveInterface.father = 5; // access relation directly by i\nreactiveInterface.father = User.observe(5).interface // or by subject's interface\nreactiveInterface.father.name = \"Somebody else\"\n// after this line User#5 will have name equals `Somebody else` and user#1 will get updated\n```\n\nBut we want to compose different data, like models or just primitives. For example, if you need screen, where user supposed to change his name.\nWe need to compose `newUserName` and entity he updates.\n\nTo do this, we need to define `Directory`\n\n```js\nconst UpdateProfileDirectory = new Directory('UpdateProfile', {\n    structure: {\n        newUserName: types.Attribute,\n        profile: types.Reference('User')\n    },\n    mutations: {\n        commitNewName(){\n            /* fetch(...).then(response => {\n                User.observe(this.profile.id)\n                    .mutate(response, 'Updated from updateProfile')\n            })*/\n            // we can commit our mutations with text message for debugging purposes.\n        }\n    }\n}, Store)\n```\n\nDirectory has no identifier. It is just structure of document you need.\n\nSo, at some point it's nice already.\nBut what about changes? Reacting only for necessary data changes is core point of Vibe.\nIt means, any subject won't get updated if its attribute is not updated or its relation is not updated.\n\nHere are examples how you subscribe to changes of entity\n```js\nsubject.observable.subscribe(({payload, source}) => {\n    // payload is structure from store\n    // source - subject which caused update\n    \n})\n```\n\n... or to directory\n```js\nUpdateProfileDirectory.observable.subscribe(state => {\n    // state - inner structure, like entity's in the store\n    /*\n        renderComponent();\n    */\n});\n```\n\nIt means, you won't need to react to all changes, like in `Flux` solutions.\n\nYou create structure for a concrete task. You define relationships and your durectory will only get updated if this relationships are updated(and they will update if their relationships are updated and like this...).\n\n\nTODO: \n1) JSONifying subjects \n2) Persistence of store and directories\n3) Examples with vue, react.\n\n",
+    "longname": "/home/enchanting/Work/vibejs/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"vibejs\",\n  \"version\": \"2.2.5\",\n  \"description\": \"State management library for javascript\",\n  \"main\": \"./src/index.js\",\n  \"scripts\": {\n    \"test\": \"mocha --compilers js:babel-core/register\",\n    \"build\": \"babel src --presets babel-preset-es2015 --out-dir ./dist\",\n    \"gendoc\": \"esdoc \"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"is-number\": \"^4.0.0\",\n    \"ramda\": \"^0.25.0\",\n    \"rxjs\": \"^5.5.0\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.26.0\",\n    \"babel-plugin-transform-object-rest-spread\": \"^6.26.0\",\n    \"babel-preset-es2015\": \"^6.24.1\",\n    \"babel-register\": \"^6.26.0\",\n    \"esdoc\": \"^1.0.3\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"mocha\": \"^4.0.1\"\n  }\n}\n",
+    "longname": "/home/enchanting/Work/vibejs/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

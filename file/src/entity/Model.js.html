@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/entity/Model.js | vibejs</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="State management library for javascript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vibejs"><meta property="twitter:description" content="State management library for javascript"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/EntityStore.js~EntityStore.html">EntityStore</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#directory">directory</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/Directory.js~Directory.html">Directory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/DirectoryMutation.js~DirectoryMutation.html">DirectoryMutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/directory/DirectorySubject.js~DirectorySubject.html">DirectorySubject</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#entity">entity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/EntitySubject.js~EntitySubject.html">EntitySubject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/Model.js~Model.html">Model</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/entity/Mutation.js~Mutation.html">Mutation</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#functions">functions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createReactiveInterface">createReactiveInterface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendArray">extendArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setComputedProperty">setComputedProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isAttribute">isAttribute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isAttributeArray">isAttributeArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isIdentifier">isIdentifier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isReference">isReference</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isReferenceArray">isReferenceArray</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/entity/Model.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Rx from &apos;rxjs/Rx&apos;
+import setComputedProperty from &apos;../functions/setComputedProperty&apos;
+import types from &apos;../types&apos;;
+import * as TypeChecker from &apos;../functions/typeChecker&apos;;
+
+export default class Model {
+    constructor(name, options = { structure: {}, computed: {}, mutations: {} }) {
+        this.name = name;
+        this.computed = options.computed || {};
+        this.structure = options.structure || {};
+        this.mutations = options.mutations || {};
+        this.structure.id = types.Identifier;
+        this.store = null;
+    }
+
+    attachStore(store) {
+        this.store = store;
+    }
+
+    allEntities(){
+        return this.store.allEntities(this.name);
+    }
+
+    fillDefaultValues(structure, item){
+        Object.entries(structure).forEach(([key, value]) =&gt; {
+            if(TypeChecker.isAttribute(structure[key])){
+                if(!(key in item))
+                    item[key] = structure[key].default();
+            }else if(TypeChecker.isReference(structure[key])){
+                if(!(key in item))
+                    item[key] = structure[key].default();
+            }else if(TypeChecker.isReferenceArray(structure[key])){
+                if(!(key in item))
+                    item[key] = structure[key].default();
+            }else if(TypeChecker.isAttributeArray(structure[key]) ){
+                if(!(key in item))
+                    item[key] = structure[key].default();
+            }else if(TypeChecker.isIdentifier(structure[key])){
+                // we check this already
+            }else{
+                if(!(key in item))
+                    item[key] = {};
+                this.fillDefaultValues(structure[key], item[key]);
+            }
+        });
+    }
+
+    insertEntity(id, item) {
+        if(id){
+            const emptyItem = {};
+            this.fillDefaultValues(this.structure, emptyItem);
+            this.fillDefaultValues(this.structure, item);
+            emptyItem[&apos;id&apos;] = id;
+            item[&apos;id&apos;] = id;
+            this.store.putEntity(this.name, id, emptyItem);
+            this.store.putEntity(this.name, id, item);
+        }else{
+            throw new Error(&quot;Entity&apos;s id cannot be null or zero&quot;);
+        }
+    }
+
+    observe(id){
+        if(this.store){
+            return this.store.getOrCreateEntitySubject(this.name, id);
+        }else{
+            throw new Error(`Model ${this.name} is not attached to a store.`)
+        }
+    }
+    
+}
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
