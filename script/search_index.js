@@ -468,6 +468,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/directory/directory.js~directory#_initialstate",
+    "class/src/directory/Directory.js~Directory.html#instance-method-_initialState",
+    "src/directory/Directory.js~Directory#_initialState",
+    "method"
+  ],
+  [
+    "src/directory/directory.js~directory#_subject",
+    "class/src/directory/Directory.js~Directory.html#instance-member-_subject",
+    "src/directory/Directory.js~Directory#_subject",
+    "member"
+  ],
+  [
     "src/directory/directory.js~directory#clear",
     "class/src/directory/Directory.js~Directory.html#instance-method-clear",
     "src/directory/Directory.js~Directory#clear",
@@ -483,12 +495,6 @@ window.esdocSearchIndex = [
     "src/directory/directory.js~directory#constructor",
     "class/src/directory/Directory.js~Directory.html#instance-constructor-constructor",
     "src/directory/Directory.js~Directory#constructor",
-    "method"
-  ],
-  [
-    "src/directory/directory.js~directory#initialstate",
-    "class/src/directory/Directory.js~Directory.html#instance-method-initialState",
-    "src/directory/Directory.js~Directory#initialState",
     "method"
   ],
   [
@@ -516,21 +522,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/directory/directory.js~directory#store",
-    "class/src/directory/Directory.js~Directory.html#instance-member-store",
-    "src/directory/Directory.js~Directory#store",
-    "member"
-  ],
-  [
     "src/directory/directory.js~directory#structure",
     "class/src/directory/Directory.js~Directory.html#instance-member-structure",
     "src/directory/Directory.js~Directory#structure",
-    "member"
-  ],
-  [
-    "src/directory/directory.js~directory#subject",
-    "class/src/directory/Directory.js~Directory.html#instance-member-subject",
-    "src/directory/Directory.js~Directory#subject",
     "member"
   ],
   [
@@ -538,6 +532,12 @@ window.esdocSearchIndex = [
     "file/src/directory/DirectoryMutation.js.html",
     "src/directory/DirectoryMutation.js",
     "file"
+  ],
+  [
+    "src/directory/directorymutation.js~directorymutation#_subject",
+    "class/src/directory/DirectoryMutation.js~DirectoryMutation.html#instance-member-_subject",
+    "src/directory/DirectoryMutation.js~DirectoryMutation#_subject",
+    "member"
   ],
   [
     "src/directory/directorymutation.js~directorymutation#commit",
@@ -552,15 +552,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/directory/directorymutation.js~directorymutation#resultstate",
-    "class/src/directory/DirectoryMutation.js~DirectoryMutation.html#instance-member-resultState",
-    "src/directory/DirectoryMutation.js~DirectoryMutation#resultState",
+    "src/directory/directorymutation.js~directorymutation#originalstate",
+    "class/src/directory/DirectoryMutation.js~DirectoryMutation.html#instance-member-originalState",
+    "src/directory/DirectoryMutation.js~DirectoryMutation#originalState",
     "member"
   ],
   [
-    "src/directory/directorymutation.js~directorymutation#subject",
-    "class/src/directory/DirectoryMutation.js~DirectoryMutation.html#instance-member-subject",
-    "src/directory/DirectoryMutation.js~DirectoryMutation#subject",
+    "src/directory/directorymutation.js~directorymutation#resultstate",
+    "class/src/directory/DirectoryMutation.js~DirectoryMutation.html#instance-member-resultState",
+    "src/directory/DirectoryMutation.js~DirectoryMutation#resultState",
     "member"
   ],
   [
@@ -588,10 +588,28 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/directory/directorysubject.js~directorysubject#_createreactiveinterface",
+    "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-method-_createReactiveInterface",
+    "src/directory/DirectorySubject.js~DirectorySubject#_createReactiveInterface",
+    "method"
+  ],
+  [
     "src/directory/directorysubject.js~directorysubject#_mapobservertosource",
     "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-method-_mapObserverToSource",
     "src/directory/DirectorySubject.js~DirectorySubject#_mapObserverToSource",
     "method"
+  ],
+  [
+    "src/directory/directorysubject.js~directorysubject#_store",
+    "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-member-_store",
+    "src/directory/DirectorySubject.js~DirectorySubject#_store",
+    "member"
+  ],
+  [
+    "src/directory/directorysubject.js~directorysubject#_subscriptions",
+    "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-member-_subscriptions",
+    "src/directory/DirectorySubject.js~DirectorySubject#_subscriptions",
+    "member"
   ],
   [
     "src/directory/directorysubject.js~directorysubject#asobject",
@@ -606,22 +624,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/directory/directorysubject.js~directorysubject#createreactiveinterface",
-    "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-method-createReactiveInterface",
-    "src/directory/DirectorySubject.js~DirectorySubject#createReactiveInterface",
-    "method"
-  ],
-  [
     "src/directory/directorysubject.js~directorysubject#directory",
     "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-member-directory",
     "src/directory/DirectorySubject.js~DirectorySubject#directory",
     "member"
-  ],
-  [
-    "src/directory/directorysubject.js~directorysubject#equals",
-    "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-method-equals",
-    "src/directory/DirectorySubject.js~DirectorySubject#equals",
-    "method"
   ],
   [
     "src/directory/directorysubject.js~directorysubject#interface",
@@ -648,27 +654,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/directory/directorysubject.js~directorysubject#store",
-    "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-member-store",
-    "src/directory/DirectorySubject.js~DirectorySubject#store",
-    "member"
-  ],
-  [
     "src/directory/directorysubject.js~directorysubject#subscribe",
     "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-method-subscribe",
     "src/directory/DirectorySubject.js~DirectorySubject#subscribe",
-    "method"
-  ],
-  [
-    "src/directory/directorysubject.js~directorysubject#subscriptions",
-    "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-member-subscriptions",
-    "src/directory/DirectorySubject.js~DirectorySubject#subscriptions",
-    "member"
-  ],
-  [
-    "src/directory/directorysubject.js~directorysubject#tostring",
-    "class/src/directory/DirectorySubject.js~DirectorySubject.html#instance-method-toString",
-    "src/directory/DirectorySubject.js~DirectorySubject#toString",
     "method"
   ],
   [

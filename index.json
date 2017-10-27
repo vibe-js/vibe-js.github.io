@@ -1048,7 +1048,7 @@
     "__docId__": 64,
     "kind": "file",
     "name": "src/directory/Directory.js",
-    "content": "import Rx from 'rxjs/Rx'\nimport setComputedProperty from '../functions/setComputedProperty'\nimport * as TypeChecker from '../functions/typeChecker'\nimport {types} from '../entity/Model';\nimport DirectorySubject from './DirectorySubject';\n\nexport default class Directory {\n    constructor(name, options = { structure: {}, computed: {} }, store) {\n        this.name = name;\n        this.computed = options.computed || {};\n        this.structure = options.structure || {};\n        this.computed = options.computed || {};\n        this.mutations = options.mutations || {};\n        this.store = store;\n        this.state = {};\n        this.initialState(this.structure, this.state);\n        this.subject = new DirectorySubject(this, store);\n    }\n\n    clear(){\n        this.state = {};\n        this.initialState(this.structure, this.state);\n    }\n\n    initialState(structure, state){\n        Object.entries(structure).forEach(([key, value]) => {\n            if(TypeChecker.isAttribute(structure[key])){\n                state[key] = structure[key].default();\n            }else if(TypeChecker.isAttributeArray(structure[key])){\n                state[key] = [];\n            }else if(TypeChecker.isReference(structure[key])){\n                state[key] = null;\n            }else if(TypeChecker.isReferenceArray(structure[key])){\n                state[key] = [];\n            }else{\n                //object\n                state[key] = {};\n                this.initialState(structure[key], state[key])\n            }\n        })\n    }\n\n    observe(){\n        return this.subject;\n    }\n    \n}",
+    "content": "import Rx from 'rxjs/Rx'\nimport setComputedProperty from '../functions/setComputedProperty'\nimport * as TypeChecker from '../functions/typeChecker'\nimport {types} from '../entity/Model';\nimport DirectorySubject from './DirectorySubject';\n\n/**\n * @class {Directory}\n */\nexport default class Directory {\n    /**\n     * Create directory\n     * @param {string} name - directory name\n     * @param {Object} options - structure, computed, mutations\n     * @param {EntityStore} store - {@link EntityStore} instance\n     * @see {@link EntityStore}\n     */\n    constructor(name, options = { structure: {}, computed: {}, mutations: {} }, store) {\n        /**\n         * Directory name\n         * @member {string}\n         */\n        this.name = name;\n        /**\n         * Directory structure\n         * @member {Object}\n         */\n        this.structure = options.structure || {};\n        /**\n         * Computed values declared in constructor\n         * @member {Object}\n         */\n        this.computed = options.computed || {};\n        /**\n         * Methods declared in constructor\n         * @member {Object}\n         */\n        this.mutations = options.mutations || {};\n        /**\n         * Local state\n         * @member {Object}\n         */\n        this.state = {};\n        this._initialState(this.structure, this.state);\n        /**\n         * Subject of this directory\n         */\n        this._subject = new DirectorySubject(this, store);\n    }\n\n    /**\n     * Clear local state and initialise default\n     */\n    clear(){\n        this.state = {};\n        this._initialState(this.structure, this.state);\n    }\n\n    /**\n     * Initialise state\n     * @param {Object} structure - structure to translate\n     * @param {*} state - state where to write\n     */\n    _initialState(structure, state){\n        Object.entries(structure).forEach(([key, value]) => {\n            if(TypeChecker.isAttribute(structure[key])){\n                state[key] = structure[key].default();\n            }else if(TypeChecker.isAttributeArray(structure[key])){\n                state[key] = [];\n            }else if(TypeChecker.isReference(structure[key])){\n                state[key] = null;\n            }else if(TypeChecker.isReferenceArray(structure[key])){\n                state[key] = [];\n            }else{\n                //object\n                state[key] = {};\n                this._initialState(structure[key], state[key])\n            }\n        })\n    }\n\n    /**\n     * Return {@link DirectorySubject} of this directory\n     * @returns {DirectorySubject}\n     */\n    observe(){\n        return this._subject;\n    }\n    \n}",
     "static": true,
     "longname": "/home/enchanting/Work/vibejs/src/directory/Directory.js",
     "access": "public",
@@ -1066,9 +1066,14 @@
     "export": true,
     "importPath": "vibejs/src/directory/Directory.js",
     "importStyle": "Directory",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "{Directory}"
+      }
+    ],
     "interface": false
   },
   {
@@ -1081,9 +1086,43 @@
     "static": false,
     "longname": "src/directory/Directory.js~Directory#constructor",
     "access": "public",
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true
+    "description": "Create directory",
+    "see": [
+      "{@link EntityStore}"
+    ],
+    "lineNumber": 18,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "directory name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "structure, computed, mutations"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "EntityStore"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "store",
+        "description": "{@link EntityStore} instance"
+      }
+    ]
   },
   {
     "__docId__": 67,
@@ -1093,9 +1132,8 @@
     "static": false,
     "longname": "src/directory/Directory.js~Directory#name",
     "access": "public",
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
+    "description": "Directory name",
+    "lineNumber": 23,
     "type": {
       "types": [
         "*"
@@ -1105,14 +1143,13 @@
   {
     "__docId__": 68,
     "kind": "member",
-    "name": "computed",
+    "name": "structure",
     "memberof": "src/directory/Directory.js~Directory",
     "static": false,
-    "longname": "src/directory/Directory.js~Directory#computed",
+    "longname": "src/directory/Directory.js~Directory#structure",
     "access": "public",
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true,
+    "description": "Directory structure",
+    "lineNumber": 28,
     "type": {
       "types": [
         "*"
@@ -1122,14 +1159,29 @@
   {
     "__docId__": 69,
     "kind": "member",
-    "name": "structure",
+    "name": "computed",
     "memberof": "src/directory/Directory.js~Directory",
     "static": false,
-    "longname": "src/directory/Directory.js~Directory#structure",
+    "longname": "src/directory/Directory.js~Directory#computed",
     "access": "public",
-    "description": null,
-    "lineNumber": 11,
-    "undocument": true,
+    "description": "Computed values declared in constructor",
+    "lineNumber": 33,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "member",
+    "name": "mutations",
+    "memberof": "src/directory/Directory.js~Directory",
+    "static": false,
+    "longname": "src/directory/Directory.js~Directory#mutations",
+    "access": "public",
+    "description": "Methods declared in constructor",
+    "lineNumber": 38,
     "type": {
       "types": [
         "*"
@@ -1139,31 +1191,29 @@
   {
     "__docId__": 71,
     "kind": "member",
-    "name": "mutations",
+    "name": "state",
     "memberof": "src/directory/Directory.js~Directory",
     "static": false,
-    "longname": "src/directory/Directory.js~Directory#mutations",
+    "longname": "src/directory/Directory.js~Directory#state",
     "access": "public",
-    "description": null,
-    "lineNumber": 13,
-    "undocument": true,
+    "description": "Local state",
+    "lineNumber": 43,
     "type": {
       "types": [
-        "*"
+        "{}"
       ]
     }
   },
   {
     "__docId__": 72,
     "kind": "member",
-    "name": "store",
+    "name": "_subject",
     "memberof": "src/directory/Directory.js~Directory",
     "static": false,
-    "longname": "src/directory/Directory.js~Directory#store",
-    "access": "public",
-    "description": null,
-    "lineNumber": 14,
-    "undocument": true,
+    "longname": "src/directory/Directory.js~Directory#_subject",
+    "access": "private",
+    "description": "Subject of this directory",
+    "lineNumber": 48,
     "type": {
       "types": [
         "*"
@@ -1172,40 +1222,6 @@
   },
   {
     "__docId__": 73,
-    "kind": "member",
-    "name": "state",
-    "memberof": "src/directory/Directory.js~Directory",
-    "static": false,
-    "longname": "src/directory/Directory.js~Directory#state",
-    "access": "public",
-    "description": null,
-    "lineNumber": 15,
-    "undocument": true,
-    "type": {
-      "types": [
-        "{}"
-      ]
-    }
-  },
-  {
-    "__docId__": 74,
-    "kind": "member",
-    "name": "subject",
-    "memberof": "src/directory/Directory.js~Directory",
-    "static": false,
-    "longname": "src/directory/Directory.js~Directory#subject",
-    "access": "public",
-    "description": null,
-    "lineNumber": 17,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 75,
     "kind": "method",
     "name": "clear",
     "memberof": "src/directory/Directory.js~Directory",
@@ -1214,43 +1230,49 @@
     "static": false,
     "longname": "src/directory/Directory.js~Directory#clear",
     "access": "public",
-    "description": null,
-    "lineNumber": 20,
-    "undocument": true,
+    "description": "Clear local state and initialise default",
+    "lineNumber": 54,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 77,
+    "__docId__": 75,
     "kind": "method",
-    "name": "initialState",
+    "name": "_initialState",
     "memberof": "src/directory/Directory.js~Directory",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/directory/Directory.js~Directory#initialState",
-    "access": "public",
-    "description": null,
-    "lineNumber": 25,
-    "undocument": true,
+    "longname": "src/directory/Directory.js~Directory#_initialState",
+    "access": "private",
+    "description": "Initialise state",
+    "lineNumber": 64,
     "params": [
       {
-        "name": "structure",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "structure",
+        "description": "structure to translate"
       },
       {
-        "name": "state",
+        "nullable": null,
         "types": [
           "*"
-        ]
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "state",
+        "description": "state where to write"
       }
     ],
     "return": null
   },
   {
-    "__docId__": 78,
+    "__docId__": 76,
     "kind": "method",
     "name": "observe",
     "memberof": "src/directory/Directory.js~Directory",
@@ -1259,21 +1281,29 @@
     "static": false,
     "longname": "src/directory/Directory.js~Directory#observe",
     "access": "public",
-    "description": null,
-    "lineNumber": 43,
-    "undocument": true,
-    "params": [],
+    "description": "Return {@link DirectorySubject} of this directory",
+    "lineNumber": 86,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{DirectorySubject}"
+      }
+    ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
-    }
+        "DirectorySubject"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
   },
   {
-    "__docId__": 79,
+    "__docId__": 77,
     "kind": "file",
     "name": "src/directory/DirectoryMutation.js",
-    "content": "// import R from 'ramda';\nimport * as R from 'ramda';\n\n\nexport default class DirectoryMutation{\n    constructor(subject, payload){\n        this.subject = subject;\n        const originalState = subject.directory.state;\n        this.resultState =  R.mergeDeepRight(originalState, payload);\n    }\n\n    commit(message){\n        this.subject.directory.state = this.resultState;\n        this.subject.update();\n    }\n}",
+    "content": "// import R from 'ramda';\nimport * as R from 'ramda';\n\n/**\n * @class {DirectoryMutation}\n */\nexport default class DirectoryMutation{\n    /**\n     * Construct mutation\n     * @param {EntitySubject} subject \n     * @param {Object} payload \n     */\n    constructor(subject, payload){\n        /**\n         * \n         * @member {DirectorySubject} - directory subject\n         */\n        this._subject = subject;\n        /**\n         * State before mutation\n         * @member {Object}\n         */\n        this.originalState = subject.directory.state;\n        /**\n         * State after mutation\n         * @member {Object}\n         */\n        this.resultState =  R.mergeDeepRight(this.originalState, payload);\n    }\n\n    /**\n     * Apply mutation\n     * @param {string} message - message with commit\n     */\n    commit(message){\n        this._subject.directory.state = this.resultState;\n        this._subject.update();\n    }\n}",
     "static": true,
     "longname": "/home/enchanting/Work/vibejs/src/directory/DirectoryMutation.js",
     "access": "public",
@@ -1281,7 +1311,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 80,
+    "__docId__": 78,
     "kind": "class",
     "name": "DirectoryMutation",
     "memberof": "src/directory/DirectoryMutation.js",
@@ -1291,13 +1321,18 @@
     "export": true,
     "importPath": "vibejs/src/directory/DirectoryMutation.js",
     "importStyle": "DirectoryMutation",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "{DirectoryMutation}"
+      }
+    ],
     "interface": false
   },
   {
-    "__docId__": 81,
+    "__docId__": 79,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
@@ -1306,21 +1341,73 @@
     "static": false,
     "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#constructor",
     "access": "public",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true
+    "description": "Construct mutation",
+    "lineNumber": 13,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "EntitySubject"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "subject",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "payload",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 80,
+    "kind": "member",
+    "name": "_subject",
+    "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
+    "static": false,
+    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#_subject",
+    "access": "private",
+    "description": "",
+    "lineNumber": 18,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "member",
+    "name": "originalState",
+    "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
+    "static": false,
+    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#originalState",
+    "access": "public",
+    "description": "State before mutation",
+    "lineNumber": 23,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
   },
   {
     "__docId__": 82,
     "kind": "member",
-    "name": "subject",
+    "name": "resultState",
     "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
     "static": false,
-    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#subject",
+    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#resultState",
     "access": "public",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "State after mutation",
+    "lineNumber": 28,
     "type": {
       "types": [
         "*"
@@ -1329,23 +1416,6 @@
   },
   {
     "__docId__": 83,
-    "kind": "member",
-    "name": "resultState",
-    "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
-    "static": false,
-    "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#resultState",
-    "access": "public",
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 84,
     "kind": "method",
     "name": "commit",
     "memberof": "src/directory/DirectoryMutation.js~DirectoryMutation",
@@ -1354,24 +1424,27 @@
     "static": false,
     "longname": "src/directory/DirectoryMutation.js~DirectoryMutation#commit",
     "access": "public",
-    "description": null,
-    "lineNumber": 12,
-    "undocument": true,
+    "description": "Apply mutation",
+    "lineNumber": 35,
     "params": [
       {
-        "name": "message",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": "message with commit"
       }
     ],
     "return": null
   },
   {
-    "__docId__": 85,
+    "__docId__": 84,
     "kind": "file",
     "name": "src/directory/DirectorySubject.js",
-    "content": "import * as R from 'ramda';\n\nimport * as TypeChecker from '../functions/typeChecker';\nimport DirectoryMutation from './DirectoryMutation';\nimport Rx from 'rxjs/Rx';\nimport extendArray from '../functions/extendArray';\nimport createReactiveInterface from '../functions/createReactiveInterface';\n\nexport default class {\n    constructor(directory, store) {\n        this.directory = directory;\n        this.store = store;\n        this.subscriptions = {};\n        this.observable = new Rx.Subject();\n        Object.entries(store.models).forEach(([key, value]) => {\n            this.subscriptions[key] = {};\n        });\n\n        this.observable.subscribe(_ => {\n            this.updateInterface();\n        })\n\n        this.interface = null;\n        this.updateInterface();\n    }\n\n    updateInterface() {\n        this.interface = this.createReactiveInterface();\n    }\n\n    mutate(mutation, message = \"\") {\n        new DirectoryMutation(this, mutation).commit(message)\n\n    }\n\n    _asObject(structure, item, deepness) {\n        const json = {};\n        Object.entries(structure).forEach(([key, value]) => {\n            if (TypeChecker.isAttribute(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isAttributeArray(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isReference(structure[key])) {\n                if (deepness > 0 && item[key])\n                    json[key] = item[key].$subject.asObject(deepness - 1);\n                else\n                    json[key] = null;\n            } else if (TypeChecker.isReferenceArray(structure[key])) {\n                if (deepness > 0)\n                    json[key] = item[key].map(inter => {\n                        return inter.$subject.asObject(deepness - 1);\n                    })\n                else\n                    json[key] = [];\n            } else if (TypeChecker.isIdentifier(structure[key])) {\n                json[key] = item[key];\n            } else {\n                //object\n                json[key] = this._asObject(structure[key], item[key], deepness);\n            }\n        })\n\n        return json;\n    }\n\n    asObject(relationDeepness) {\n        if (this.interface){\n            const result = this._asObject(this.directory.structure, this.interface, relationDeepness)\n            this._applyComputed(result);\n            return result;\n        }else\n            return null;\n    }\n\n    update() {\n        this.observable.next(this.state);\n    }\n\n\n\n    createReactiveInterface() {\n        const get = (key) => {\n            return this.directory.state[key];\n        }\n        const set = (key, value) => {\n            this.mutate({\n                [key]: value\n            }, `Modify ${key} with value ${value}`)\n        }\n        const reactiveInterface = {};\n        this._mapObserverToSource(reactiveInterface, this.directory.structure, {\n            get,\n            set\n        });\n        this._applyComputed(reactiveInterface);\n        this._applyMutations(reactiveInterface);\n        return reactiveInterface;\n    }\n\n\n    _applyComputed(reactiveInterface){\n        Object.entries(this.directory.computed).forEach(([key, value]) => {\n            reactiveInterface[key] = value.call(reactiveInterface)\n        });\n    }\n\n    _applyMutations(reactiveInterface){\n        Object.entries(this.directory.mutations).forEach(([key, value]) => {\n            reactiveInterface[key] = value.bind(reactiveInterface)\n        })\n    }\n\n\n    _mapObserverToSource(item = {}, structure, stateProvider) {\n        const store = this.store;\n        const directorySubject = this;\n        createReactiveInterface({\n            item: item,\n            stateProvider: stateProvider,\n            store: this.store,\n            updateState(source){\n                directorySubject.update();\n            },\n            structure: this.directory.structure,\n            subscribe(name, id){\n                if (!directorySubject.isSubscriberOf(name, id)) {\n                    directorySubject.subscribe(name, id)(({ payload, source }) => {\n                        directorySubject.update();\n                    });\n                }\n            },\n            unsubscribe(name, id){\n                directorySubject.unsubscribe(name, id)\n            }\n        });\n    }\n\n    equals(directorySubject) {\n        return this === directorySubject;\n    }\n\n\n    isSubscriberOf(name, id) {\n        return this.subscriptions[name][id];\n    }\n\n    subscribe(name, id) {\n        return (a, b, c) => {\n            this.subscriptions[name][id] = this.store.getOrCreateEntitySubject(name, id).observable\n                .filter(({ payload, source }) => source !== this)\n                .subscribe(a, b, c);\n        }\n    }\n\n    unsubscribe(name, id) {\n        if (this.subscriptions[name][id]) {\n            this.subscriptions[name][id].unsubscribe();\n        }\n        delete this.subscriptions[name][id];\n    }\n\n\n    toString() {\n        return `\"#${this.name}\"`\n    }\n}",
+    "content": "import * as R from 'ramda';\n\nimport * as TypeChecker from '../functions/typeChecker';\nimport DirectoryMutation from './DirectoryMutation';\nimport Rx from 'rxjs/Rx';\nimport extendArray from '../functions/extendArray';\nimport createReactiveInterface from '../functions/createReactiveInterface';\n\n/**\n * @class {DirectorySubject}\n */\nexport default class DirectorySubject {\n    /**\n     * Create DirectorySubject\n     * @param {Directory} directory \n     * @param {EntityStore} store \n     */\n    constructor(directory, store) {\n        /**\n         * Attached {@link Directory}\n         * @member {Directory}\n         */\n        this.directory = directory;\n        /**\n         * Attached {@link EntityStore}\n         * @member {EntityStore}\n         */\n        this._store = store;\n        /**\n         * [model name][entity id] like structure of subscriptions\n         * @member {Object}\n         */\n        this._subscriptions = {};\n        /**\n         * Observable, updated each time directory state is changed\n         * @member {Rx.Subject}\n         */\n        this.observable = new Rx.Subject();\n\n        Object.entries(store.models).forEach(([key, value]) => {\n            this._subscriptions[key] = {};\n        });\n\n        this.observable.subscribe(_ => {\n            this.updateInterface();\n        })\n\n        /**\n         * Reactive interface which contains mutations, computed values and evaluated state\n         * @member {Object}\n         */\n        this.interface = null;\n        this.updateInterface();\n    }\n\n    /**\n     * Force update interface\n     */\n    updateInterface() {\n        this.interface = this._createReactiveInterface();\n    }\n\n    /**\n     * Mutate directory state\n     * @param {Object} mutation - payload\n     * @param {string} message - commit message\n     */\n    mutate(mutation, message = \"\") {\n        new DirectoryMutation(this, mutation).commit(message)\n    }\n\n    /**\n     * Writes evaluated state into item from structure\n     * @param {Object} structure - structure\n     * @param {Object} item - object to write to\n     * @param {number} deepness - how deep to resolve relationships\n     */\n    _asObject(structure, item, deepness) {\n        const json = {};\n        Object.entries(structure).forEach(([key, value]) => {\n            if (TypeChecker.isAttribute(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isAttributeArray(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isReference(structure[key])) {\n                if (deepness > 0 && item[key])\n                    json[key] = item[key].$subject.asObject(deepness - 1);\n                else\n                    json[key] = null;\n            } else if (TypeChecker.isReferenceArray(structure[key])) {\n                if (deepness > 0)\n                    json[key] = item[key].map(inter => {\n                        return inter.$subject.asObject(deepness - 1);\n                    })\n                else\n                    json[key] = [];\n            } else if (TypeChecker.isIdentifier(structure[key])) {\n                json[key] = item[key];\n            } else {\n                //object\n                json[key] = this._asObject(structure[key], item[key], deepness);\n            }\n        })\n\n        return json;\n    }\n\n    /**\n     * @returns {Object} - evaluated javascript object\n     * @param {number} relationDeepness - how deep to resolve relationships\n     */\n    asObject(relationDeepness) {\n        if (this.interface) {\n            const result = this._asObject(this.directory.structure, this.interface, relationDeepness)\n            this._applyComputed(result);\n            return result;\n        } else\n            return null;\n    }\n\n    /**\n     * Force update observable\n     */\n    update() {\n        this.observable.next(this.state);\n    }\n\n\n    /**\n     * @returns {Object} - reactive interface\n     */\n    _createReactiveInterface() {\n        const get = (key) => {\n            return this.directory.state[key];\n        }\n        const set = (key, value) => {\n            this.mutate({\n                [key]: value\n            }, `Modify ${key} with value ${value}`)\n        }\n        const reactiveInterface = {};\n        this._mapObserverToSource(reactiveInterface, this.directory.structure, {\n            get,\n            set\n        });\n        this._applyComputed(reactiveInterface);\n        this._applyMutations(reactiveInterface);\n        return reactiveInterface;\n    }\n\n\n    /**\n     * Insert computed values into item(reactive interface or evaluated state)\n     * @param {Object} item \n     */\n    _applyComputed(item) {\n        Object.entries(this.directory.computed).forEach(([key, value]) => {\n            item[key] = value.call(item)\n        });\n    }\n\n    /**\n     * Insert mutation functions into reactiveInteface\n     * @param {Object} reactiveInterface \n     */\n    _applyMutations(reactiveInterface) {\n        Object.entries(this.directory.mutations).forEach(([key, value]) => {\n            reactiveInterface[key] = value.bind(reactiveInterface)\n        })\n    }\n\n\n    /**\n     * Define reactive getters and setters\n     * @param {Object} item - object to write to\n     * @param {Object} structure - structure\n     * @param {Object} stateProvider - get by key and set by key and value helper\n     */\n    _mapObserverToSource(item = {}, structure, stateProvider) {\n        const store = this._store;\n        const directorySubject = this;\n        createReactiveInterface({\n            item: item,\n            stateProvider: stateProvider,\n            store: this._store,\n            updateState(source) {\n                directorySubject.update();\n            },\n            structure: this.directory.structure,\n            subscribe(name, id) {\n                if (!directorySubject.isSubscriberOf(name, id)) {\n                    directorySubject.subscribe(name, id)(({ payload, source }) => {\n                        directorySubject.update();\n                    });\n                }\n            },\n            unsubscribe(name, id) {\n                directorySubject.unsubscribe(name, id)\n            }\n        });\n    }\n\n    /**\n     * @returns {Boolean} - is this subject is subscriber of passed entity\n     * @param {string} name - model name\n     * @param {*} id - entity id\n     */\n    isSubscriberOf(name, id) {\n        return this._subscriptions[name][id];\n    }\n\n    /**\n     * Prepares to subscribe\n     * Will rewrite previous subscription\n     * @returns {Function} - real subscribe function\n     * @param {stirng} name - model name\n     * @param {*} id - entity id\n     */\n    subscribe(name, id) {\n        return (a, b, c) => {\n            this._subscriptions[name][id] = this._store.getOrCreateEntitySubject(name, id).observable\n                .filter(({ payload, source }) => source !== this)\n                .subscribe(a, b, c);\n        }\n    }\n\n    /**\n     * Unsubscribe from entity updates and delete subscription\n     * @param {string} name - model name\n     * @param {*} id - entity id \n     */\n    unsubscribe(name, id) {\n        if (this._subscriptions[name][id]) {\n            this._subscriptions[name][id].unsubscribe();\n        }\n        delete this._subscriptions[name][id];\n    }\n}",
     "static": true,
     "longname": "/home/enchanting/Work/vibejs/src/directory/DirectorySubject.js",
     "access": "public",
@@ -1379,7 +1452,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 86,
+    "__docId__": 85,
     "kind": "class",
     "name": "DirectorySubject",
     "memberof": "src/directory/DirectorySubject.js",
@@ -1389,13 +1462,18 @@
     "export": true,
     "importPath": "vibejs/src/directory/DirectorySubject.js",
     "importStyle": "DirectorySubject",
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 12,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "{DirectorySubject}"
+      }
+    ],
     "interface": false
   },
   {
-    "__docId__": 87,
+    "__docId__": 86,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1404,21 +1482,57 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#constructor",
     "access": "public",
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true
+    "description": "Create DirectorySubject",
+    "lineNumber": 18,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Directory"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "directory",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "EntityStore"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "store",
+        "description": ""
+      }
+    ]
   },
   {
-    "__docId__": 88,
+    "__docId__": 87,
     "kind": "member",
     "name": "directory",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#directory",
     "access": "public",
-    "description": null,
-    "lineNumber": 11,
-    "undocument": true,
+    "description": "Attached {@link Directory}",
+    "lineNumber": 23,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "member",
+    "name": "_store",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#_store",
+    "access": "private",
+    "description": "Attached {@link EntityStore}",
+    "lineNumber": 28,
     "type": {
       "types": [
         "*"
@@ -1428,31 +1542,13 @@
   {
     "__docId__": 89,
     "kind": "member",
-    "name": "store",
+    "name": "_subscriptions",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
     "static": false,
-    "longname": "src/directory/DirectorySubject.js~DirectorySubject#store",
-    "access": "public",
-    "description": null,
-    "lineNumber": 12,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 90,
-    "kind": "member",
-    "name": "subscriptions",
-    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
-    "static": false,
-    "longname": "src/directory/DirectorySubject.js~DirectorySubject#subscriptions",
-    "access": "public",
-    "description": null,
-    "lineNumber": 13,
-    "undocument": true,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#_subscriptions",
+    "access": "private",
+    "description": "[model name][entity id] like structure of subscriptions",
+    "lineNumber": 33,
     "type": {
       "types": [
         "{}"
@@ -1460,16 +1556,31 @@
     }
   },
   {
-    "__docId__": 91,
+    "__docId__": 90,
     "kind": "member",
     "name": "observable",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#observable",
     "access": "public",
-    "description": null,
-    "lineNumber": 14,
-    "undocument": true,
+    "description": "Observable, updated each time directory state is changed",
+    "lineNumber": 38,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 91,
+    "kind": "member",
+    "name": "interface",
+    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
+    "static": false,
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#interface",
+    "access": "public",
+    "description": "Reactive interface which contains mutations, computed values and evaluated state",
+    "lineNumber": 52,
     "type": {
       "types": [
         "*"
@@ -1478,23 +1589,6 @@
   },
   {
     "__docId__": 92,
-    "kind": "member",
-    "name": "interface",
-    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
-    "static": false,
-    "longname": "src/directory/DirectorySubject.js~DirectorySubject#interface",
-    "access": "public",
-    "description": null,
-    "lineNumber": 23,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 93,
     "kind": "method",
     "name": "updateInterface",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1503,14 +1597,13 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#updateInterface",
     "access": "public",
-    "description": null,
-    "lineNumber": 27,
-    "undocument": true,
+    "description": "Force update interface",
+    "lineNumber": 59,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 95,
+    "__docId__": 94,
     "kind": "method",
     "name": "mutate",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1519,30 +1612,34 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#mutate",
     "access": "public",
-    "description": null,
-    "lineNumber": 31,
-    "undocument": true,
+    "description": "Mutate directory state",
+    "lineNumber": 68,
     "params": [
       {
-        "name": "mutation",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "mutation",
+        "description": "payload"
       },
       {
-        "name": "message",
-        "optional": true,
+        "nullable": null,
         "types": [
           "string"
         ],
-        "defaultRaw": "",
-        "defaultValue": ""
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": "commit message"
       }
     ],
     "return": null
   },
   {
-    "__docId__": 96,
+    "__docId__": 95,
     "kind": "method",
     "name": "_asObject",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1551,27 +1648,38 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#_asObject",
     "access": "private",
-    "description": null,
-    "lineNumber": 36,
-    "undocument": true,
+    "description": "Writes evaluated state into item from structure",
+    "lineNumber": 78,
     "params": [
       {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
         "name": "structure",
-        "types": [
-          "*"
-        ]
+        "description": "structure"
       },
       {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
         "name": "item",
-        "types": [
-          "*"
-        ]
+        "description": "object to write to"
       },
       {
-        "name": "deepness",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "deepness",
+        "description": "how deep to resolve relationships"
       }
     ],
     "return": {
@@ -1581,7 +1689,7 @@
     }
   },
   {
-    "__docId__": 97,
+    "__docId__": 96,
     "kind": "method",
     "name": "asObject",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1590,25 +1698,37 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#asObject",
     "access": "public",
-    "description": null,
-    "lineNumber": 66,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 112,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} - evaluated javascript object"
+      }
+    ],
     "params": [
       {
-        "name": "relationDeepness",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "relationDeepness",
+        "description": "how deep to resolve relationships"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": "evaluated javascript object"
     }
   },
   {
-    "__docId__": 98,
+    "__docId__": 97,
     "kind": "method",
     "name": "update",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1617,34 +1737,41 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#update",
     "access": "public",
-    "description": null,
-    "lineNumber": 75,
-    "undocument": true,
+    "description": "Force update observable",
+    "lineNumber": 124,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 99,
+    "__docId__": 98,
     "kind": "method",
-    "name": "createReactiveInterface",
+    "name": "_createReactiveInterface",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/directory/DirectorySubject.js~DirectorySubject#createReactiveInterface",
-    "access": "public",
-    "description": null,
-    "lineNumber": 81,
-    "undocument": true,
-    "params": [],
+    "longname": "src/directory/DirectorySubject.js~DirectorySubject#_createReactiveInterface",
+    "access": "private",
+    "description": "",
+    "lineNumber": 132,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} - reactive interface"
+      }
+    ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
-    }
+        "Object"
+      ],
+      "spread": false,
+      "description": "reactive interface"
+    },
+    "params": []
   },
   {
-    "__docId__": 100,
+    "__docId__": 99,
     "kind": "method",
     "name": "_applyComputed",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1653,21 +1780,24 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#_applyComputed",
     "access": "private",
-    "description": null,
-    "lineNumber": 101,
-    "undocument": true,
+    "description": "Insert computed values into item(reactive interface or evaluated state)",
+    "lineNumber": 156,
     "params": [
       {
-        "name": "reactiveInterface",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "item",
+        "description": ""
       }
     ],
     "return": null
   },
   {
-    "__docId__": 101,
+    "__docId__": 100,
     "kind": "method",
     "name": "_applyMutations",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1676,21 +1806,24 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#_applyMutations",
     "access": "private",
-    "description": null,
-    "lineNumber": 107,
-    "undocument": true,
+    "description": "Insert mutation functions into reactiveInteface",
+    "lineNumber": 166,
     "params": [
       {
-        "name": "reactiveInterface",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "reactiveInterface",
+        "description": ""
       }
     ],
     "return": null
   },
   {
-    "__docId__": 102,
+    "__docId__": 101,
     "kind": "method",
     "name": "_mapObserverToSource",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1699,63 +1832,44 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#_mapObserverToSource",
     "access": "private",
-    "description": null,
-    "lineNumber": 114,
-    "undocument": true,
+    "description": "Define reactive getters and setters",
+    "lineNumber": 179,
     "params": [
       {
-        "name": "item",
-        "optional": true,
+        "nullable": null,
         "types": [
-          "{}"
+          "Object"
         ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
+        "spread": false,
+        "optional": false,
+        "name": "item",
+        "description": "object to write to"
       },
       {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
         "name": "structure",
-        "types": [
-          "*"
-        ]
+        "description": "structure"
       },
       {
-        "name": "stateProvider",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "stateProvider",
+        "description": "get by key and set by key and value helper"
       }
     ],
     "return": null
   },
   {
-    "__docId__": 103,
-    "kind": "method",
-    "name": "equals",
-    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/directory/DirectorySubject.js~DirectorySubject#equals",
-    "access": "public",
-    "description": null,
-    "lineNumber": 138,
-    "undocument": true,
-    "params": [
-      {
-        "name": "directorySubject",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 104,
+    "__docId__": 102,
     "kind": "method",
     "name": "isSubscriberOf",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1764,31 +1878,47 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#isSubscriberOf",
     "access": "public",
-    "description": null,
-    "lineNumber": 143,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 208,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Boolean} - is this subject is subscriber of passed entity"
+      }
+    ],
     "params": [
       {
-        "name": "name",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "model name"
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
           "*"
-        ]
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "entity id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "is this subject is subscriber of passed entity"
     }
   },
   {
-    "__docId__": 105,
+    "__docId__": 103,
     "kind": "method",
     "name": "subscribe",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1797,31 +1927,47 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#subscribe",
     "access": "public",
-    "description": null,
-    "lineNumber": 147,
-    "undocument": true,
+    "description": "Prepares to subscribe\nWill rewrite previous subscription",
+    "lineNumber": 219,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Function} - real subscribe function"
+      }
+    ],
     "params": [
       {
-        "name": "name",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "stirng"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "model name"
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
           "*"
-        ]
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "entity id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Function"
+      ],
+      "spread": false,
+      "description": "real subscribe function"
     }
   },
   {
-    "__docId__": 106,
+    "__docId__": 104,
     "kind": "method",
     "name": "unsubscribe",
     "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
@@ -1830,47 +1976,34 @@
     "static": false,
     "longname": "src/directory/DirectorySubject.js~DirectorySubject#unsubscribe",
     "access": "public",
-    "description": null,
-    "lineNumber": 155,
-    "undocument": true,
+    "description": "Unsubscribe from entity updates and delete subscription",
+    "lineNumber": 232,
     "params": [
       {
-        "name": "name",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "model name"
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
           "*"
-        ]
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "entity id"
       }
     ],
     "return": null
   },
   {
-    "__docId__": 107,
-    "kind": "method",
-    "name": "toString",
-    "memberof": "src/directory/DirectorySubject.js~DirectorySubject",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/directory/DirectorySubject.js~DirectorySubject#toString",
-    "access": "public",
-    "description": null,
-    "lineNumber": 163,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "string"
-      ]
-    }
-  },
-  {
-    "__docId__": 108,
+    "__docId__": 105,
     "kind": "file",
     "name": "src/entity/EntitySubject.js",
     "content": "import * as R from 'ramda';\nimport * as TypeChecker from '../functions/typeChecker';\nimport Mutation from './Mutation';\nimport isNumber from 'is-number'\nimport createReactiveInterface from '../functions/createReactiveInterface';\n\n/**\n * @class {EntitySubject}\n */\nexport default class EntitySubject{\n    constructor(name, id, observable, model, store) {\n        this.name = name;\n        this.id = id;\n        this.model = model;\n        this.observable = observable;\n        this.store = store;\n        this.subscriptions = {};\n        Object.entries(store.models).forEach(([key, value]) => {\n            this.subscriptions[key] = {};\n        });\n\n        this.interface = this.createReactiveInterface();\n\n        this.subscriptions[name][id] = this.observable.filter(({ payload, source }) => source !== this);\n        this.subscriptions[name][id].subscribe(({ payload, source }) => {\n            this.updateInterface();\n        }, error => {\n\n        }, complete => {\n\n        });\n    }\n\n    updateInterface() {\n        this.interface = this.createReactiveInterface();\n    }\n\n    _asObject(structure, item, deepness) {\n        const json = {};\n        Object.entries(structure).forEach(([key, value]) => {\n            if (TypeChecker.isAttribute(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isAttributeArray(structure[key])) {\n                json[key] = item[key];\n            } else if (TypeChecker.isReference(structure[key])) {\n                if (deepness > 0 && item[key])\n                    json[key] = item[key].$subject.asObject(deepness - 1);\n                else\n                    json[key] = null;\n            } else if (TypeChecker.isReferenceArray(structure[key])) {\n                if (deepness > 0)\n                    json[key] = item[key].map(inter => {\n                        return inter.$subject.asObject(deepness - 1);\n                    })\n                else\n                    json[key] = [];\n            } else if (TypeChecker.isIdentifier(structure[key])) {\n                json[key] = item[key];\n            } else {\n                //object\n                json[key] = this._asObject(structure[key], item[key], deepness);\n            }\n        })\n\n        return json;\n    }\n\n    asObject(relationDeepness) {\n        if (this.interface){\n            const result = this._asObject(this.model.structure, this.interface, relationDeepness)\n            this._applyComputed(result);\n            return result;\n        }else\n            return null;\n    }\n\n    mutate(mutation, message = \"\") {\n        if (this.store.heap[this.name][this.id]) {\n            new Mutation(this, mutation).commit(message)\n        } else {\n            throw new Error(`Trying to modify not existing entity`);\n        }\n    }\n\n\n    createReactiveInterface() {\n        if (this.store.heap[this.name][this.id]) {\n            const get = (key) => {\n                if (this.store.heap[this.name][this.id])\n                    return this.store.heap[this.name][this.id][key];\n                else\n                    throw new Error(`Trying to read not existing entity`)\n            }\n            const set = (key, value) => {\n                this.mutate({\n                    [key]: value\n                }, `Modify ${key} with value ${value}`)\n            }\n            const reactiveInterface = {};\n            this._mapObserverToSource(reactiveInterface, this.model.structure, {\n                get,\n                set\n            });\n            this._applyComputed(reactiveInterface);\n            this._applyMutations(reactiveInterface);\n\n            reactiveInterface.$subject = this;\n            return reactiveInterface;\n        } else {\n            return null;\n        }\n    }\n\n\n    _applyComputed(reactiveInterface) {\n        Object.entries(this.model.computed).forEach(([key, value]) => {\n            reactiveInterface[key] = value.call(reactiveInterface)\n        });\n    }\n\n    _applyMutations(reactiveInterface) {\n        Object.entries(this.model.mutations).forEach(([key, value]) => {\n            reactiveInterface[key] = value.bind(reactiveInterface)\n        })\n    }\n\n    _processReference(value, stateProvider) {\n        if (isNumber(value)) {\n            return value;\n        } else if (value == null) {\n            return value;\n        } else if ('id' in value && isNumber(value.id)) {\n            return value.id\n        } else {\n            throw new Error(\"Invalid reference: expected id, null or subject\")\n        }\n    }\n\n    _mapObserverToSource(item = {}, structure, stateProvider) {\n        const entitySubject = this;\n        return createReactiveInterface({\n            item: item,\n            stateProvider: stateProvider,\n            store: this.store,\n            updateState(source){\n                this.store.entityUpdated(entitySubject.name, entitySubject.id, source);\n            },\n            structure: this.model.structure,\n            subscribe(name, id){\n                if (!entitySubject.isSubscriberOf(name, id)) {\n                    entitySubject.subscribe(name, id)(({ payload, source }) => {\n                        entitySubject.store.entityUpdated(entitySubject.name, entitySubject.id, source);                        \n                    });\n                }\n            },\n            unsubscribe(name, id){\n                entitySubject.unsubscribe(name, id)\n            }\n        })\n    }\n\n    equals(entitySubject) {\n        return this === entitySubject;\n    }\n\n\n    isSubscriberOf(name, id) {\n        return this.subscriptions[name][id];\n    }\n\n    subscribe(name, id) {\n        return (a, b, c) => {\n            this.subscriptions[name][id] = this.store.getOrCreateEntitySubject(name, id).observable\n                .filter(({ payload, source }) => source !== this)\n                .subscribe(a, b, c);\n        }\n    }\n\n    unsubscribe(name, id) {\n        if (this.subscriptions[name][id]) {\n            this.subscriptions[name][id].unsubscribe();\n        }\n        delete this.subscriptions[name][id];\n    }\n\n\n    toString() {\n        return `\"${this.name}.${this.id}\"`\n    }\n}",
@@ -1881,7 +2014,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 109,
+    "__docId__": 106,
     "kind": "class",
     "name": "EntitySubject",
     "memberof": "src/entity/EntitySubject.js",
@@ -1902,7 +2035,7 @@
     "interface": false
   },
   {
-    "__docId__": 110,
+    "__docId__": 107,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -1916,7 +2049,7 @@
     "undocument": true
   },
   {
-    "__docId__": 111,
+    "__docId__": 108,
     "kind": "member",
     "name": "name",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -1933,7 +2066,7 @@
     }
   },
   {
-    "__docId__": 112,
+    "__docId__": 109,
     "kind": "member",
     "name": "id",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -1950,7 +2083,7 @@
     }
   },
   {
-    "__docId__": 113,
+    "__docId__": 110,
     "kind": "member",
     "name": "model",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -1967,7 +2100,7 @@
     }
   },
   {
-    "__docId__": 114,
+    "__docId__": 111,
     "kind": "member",
     "name": "observable",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -1984,7 +2117,7 @@
     }
   },
   {
-    "__docId__": 115,
+    "__docId__": 112,
     "kind": "member",
     "name": "store",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2001,7 +2134,7 @@
     }
   },
   {
-    "__docId__": 116,
+    "__docId__": 113,
     "kind": "member",
     "name": "subscriptions",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2018,7 +2151,7 @@
     }
   },
   {
-    "__docId__": 117,
+    "__docId__": 114,
     "kind": "member",
     "name": "interface",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2035,7 +2168,7 @@
     }
   },
   {
-    "__docId__": 118,
+    "__docId__": 115,
     "kind": "method",
     "name": "updateInterface",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2051,7 +2184,7 @@
     "return": null
   },
   {
-    "__docId__": 120,
+    "__docId__": 117,
     "kind": "method",
     "name": "_asObject",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2090,7 +2223,7 @@
     }
   },
   {
-    "__docId__": 121,
+    "__docId__": 118,
     "kind": "method",
     "name": "asObject",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2117,7 +2250,7 @@
     }
   },
   {
-    "__docId__": 122,
+    "__docId__": 119,
     "kind": "method",
     "name": "mutate",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2149,7 +2282,7 @@
     "return": null
   },
   {
-    "__docId__": 123,
+    "__docId__": 120,
     "kind": "method",
     "name": "createReactiveInterface",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2169,7 +2302,7 @@
     }
   },
   {
-    "__docId__": 124,
+    "__docId__": 121,
     "kind": "method",
     "name": "_applyComputed",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2192,7 +2325,7 @@
     "return": null
   },
   {
-    "__docId__": 125,
+    "__docId__": 122,
     "kind": "method",
     "name": "_applyMutations",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2215,7 +2348,7 @@
     "return": null
   },
   {
-    "__docId__": 126,
+    "__docId__": 123,
     "kind": "method",
     "name": "_processReference",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2248,7 +2381,7 @@
     }
   },
   {
-    "__docId__": 127,
+    "__docId__": 124,
     "kind": "method",
     "name": "_mapObserverToSource",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2290,7 +2423,7 @@
     }
   },
   {
-    "__docId__": 128,
+    "__docId__": 125,
     "kind": "method",
     "name": "equals",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2317,7 +2450,7 @@
     }
   },
   {
-    "__docId__": 129,
+    "__docId__": 126,
     "kind": "method",
     "name": "isSubscriberOf",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2350,7 +2483,7 @@
     }
   },
   {
-    "__docId__": 130,
+    "__docId__": 127,
     "kind": "method",
     "name": "subscribe",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2383,7 +2516,7 @@
     }
   },
   {
-    "__docId__": 131,
+    "__docId__": 128,
     "kind": "method",
     "name": "unsubscribe",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2412,7 +2545,7 @@
     "return": null
   },
   {
-    "__docId__": 132,
+    "__docId__": 129,
     "kind": "method",
     "name": "toString",
     "memberof": "src/entity/EntitySubject.js~EntitySubject",
@@ -2432,7 +2565,7 @@
     }
   },
   {
-    "__docId__": 133,
+    "__docId__": 130,
     "kind": "file",
     "name": "src/entity/Model.js",
     "content": "import Rx from 'rxjs/Rx'\nimport setComputedProperty from '../functions/setComputedProperty'\nimport types from '../types';\nimport * as TypeChecker from '../functions/typeChecker';\n\nexport default class Model {\n    constructor(name, options = { structure: {}, computed: {}, mutations: {} }) {\n        this.name = name;\n        this.computed = options.computed || {};\n        this.structure = options.structure || {};\n        this.mutations = options.mutations || {};\n        this.structure.id = types.Identifier;\n        this.store = null;\n    }\n\n    attachStore(store) {\n        this.store = store;\n    }\n\n    allEntities(){\n        return this.store.allEntities(this.name);\n    }\n\n    fillDefaultValues(structure, item){\n        Object.entries(structure).forEach(([key, value]) => {\n            if(TypeChecker.isAttribute(structure[key])){\n                if(!(key in item))\n                    item[key] = structure[key].default();\n            }else if(TypeChecker.isReference(structure[key])){\n                if(!(key in item))\n                    item[key] = structure[key].default();\n            }else if(TypeChecker.isReferenceArray(structure[key])){\n                if(!(key in item))\n                    item[key] = structure[key].default();\n            }else if(TypeChecker.isAttributeArray(structure[key]) ){\n                if(!(key in item))\n                    item[key] = structure[key].default();\n            }else if(TypeChecker.isIdentifier(structure[key])){\n                // we check this already\n            }else{\n                if(!(key in item))\n                    item[key] = {};\n                this.fillDefaultValues(structure[key], item[key]);\n            }\n        });\n    }\n\n    insertEntity(id, item) {\n        if(id){\n            const emptyItem = {};\n            this.fillDefaultValues(this.structure, emptyItem);\n            this.fillDefaultValues(this.structure, item);\n            emptyItem['id'] = id;\n            item['id'] = id;\n            this.store.putEntity(this.name, id, emptyItem);\n            this.store.putEntity(this.name, id, item);\n        }else{\n            throw new Error(\"Entity's id cannot be null or zero\");\n        }\n    }\n\n    observe(id){\n        if(this.store){\n            return this.store.getOrCreateEntitySubject(this.name, id);\n        }else{\n            throw new Error(`Model ${this.name} is not attached to a store.`)\n        }\n    }\n    \n}\n\n",
@@ -2443,7 +2576,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 134,
+    "__docId__": 131,
     "kind": "class",
     "name": "Model",
     "memberof": "src/entity/Model.js",
@@ -2459,7 +2592,7 @@
     "interface": false
   },
   {
-    "__docId__": 135,
+    "__docId__": 132,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/entity/Model.js~Model",
@@ -2473,7 +2606,7 @@
     "undocument": true
   },
   {
-    "__docId__": 136,
+    "__docId__": 133,
     "kind": "member",
     "name": "name",
     "memberof": "src/entity/Model.js~Model",
@@ -2490,7 +2623,7 @@
     }
   },
   {
-    "__docId__": 137,
+    "__docId__": 134,
     "kind": "member",
     "name": "computed",
     "memberof": "src/entity/Model.js~Model",
@@ -2507,7 +2640,7 @@
     }
   },
   {
-    "__docId__": 138,
+    "__docId__": 135,
     "kind": "member",
     "name": "structure",
     "memberof": "src/entity/Model.js~Model",
@@ -2524,7 +2657,7 @@
     }
   },
   {
-    "__docId__": 139,
+    "__docId__": 136,
     "kind": "member",
     "name": "mutations",
     "memberof": "src/entity/Model.js~Model",
@@ -2541,7 +2674,7 @@
     }
   },
   {
-    "__docId__": 140,
+    "__docId__": 137,
     "kind": "member",
     "name": "store",
     "memberof": "src/entity/Model.js~Model",
@@ -2558,7 +2691,7 @@
     }
   },
   {
-    "__docId__": 141,
+    "__docId__": 138,
     "kind": "method",
     "name": "attachStore",
     "memberof": "src/entity/Model.js~Model",
@@ -2581,7 +2714,7 @@
     "return": null
   },
   {
-    "__docId__": 143,
+    "__docId__": 140,
     "kind": "method",
     "name": "allEntities",
     "memberof": "src/entity/Model.js~Model",
@@ -2601,7 +2734,7 @@
     }
   },
   {
-    "__docId__": 144,
+    "__docId__": 141,
     "kind": "method",
     "name": "fillDefaultValues",
     "memberof": "src/entity/Model.js~Model",
@@ -2630,7 +2763,7 @@
     "return": null
   },
   {
-    "__docId__": 145,
+    "__docId__": 142,
     "kind": "method",
     "name": "insertEntity",
     "memberof": "src/entity/Model.js~Model",
@@ -2659,7 +2792,7 @@
     "return": null
   },
   {
-    "__docId__": 146,
+    "__docId__": 143,
     "kind": "method",
     "name": "observe",
     "memberof": "src/entity/Model.js~Model",
@@ -2686,7 +2819,7 @@
     }
   },
   {
-    "__docId__": 147,
+    "__docId__": 144,
     "kind": "file",
     "name": "src/entity/Mutation.js",
     "content": "import * as R from 'ramda';\n\nexport default class Mutation{\n    constructor(subject, payload){\n        this.subject = subject;\n        const originalState = subject.store.heap[subject.name][subject.id];\n        delete payload.id; // we just don't want to modify id, right?\n        this.resultState =  R.mergeDeepRight(originalState, payload);\n    }\n\n    commit(message){\n        this.subject.store.updateEntity(this.subject.name, this.subject.id, this.resultState, this.subject, message);\n    }\n}",
@@ -2697,7 +2830,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 148,
+    "__docId__": 145,
     "kind": "class",
     "name": "Mutation",
     "memberof": "src/entity/Mutation.js",
@@ -2713,7 +2846,7 @@
     "interface": false
   },
   {
-    "__docId__": 149,
+    "__docId__": 146,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/entity/Mutation.js~Mutation",
@@ -2727,7 +2860,7 @@
     "undocument": true
   },
   {
-    "__docId__": 150,
+    "__docId__": 147,
     "kind": "member",
     "name": "subject",
     "memberof": "src/entity/Mutation.js~Mutation",
@@ -2744,7 +2877,7 @@
     }
   },
   {
-    "__docId__": 151,
+    "__docId__": 148,
     "kind": "member",
     "name": "resultState",
     "memberof": "src/entity/Mutation.js~Mutation",
@@ -2761,7 +2894,7 @@
     }
   },
   {
-    "__docId__": 152,
+    "__docId__": 149,
     "kind": "method",
     "name": "commit",
     "memberof": "src/entity/Mutation.js~Mutation",
@@ -2784,7 +2917,7 @@
     "return": null
   },
   {
-    "__docId__": 153,
+    "__docId__": 150,
     "kind": "file",
     "name": "src/functions/createReactiveInterface.js",
     "content": "import * as TypeChecker from './typeChecker';\nimport * as R from 'ramda';\nimport isNumber from 'is-number';\n\nconst _processReference = (value, stateProvider) => {\n    if (isNumber(value)) {\n        return value;\n    } else if (value == null) {\n        return value;\n    } else if ('id' in value && isNumber(value.id)) {\n        return value.id\n    } else {\n        throw new Error(\"Invalid reference: expected id, null or subject\")\n    }\n}\nconst createReactiveInterface =  ({ item, stateProvider, store, updateState, structure, subscribe, unsubscribe }) => {\n    Object.entries(structure).forEach(([key, value]) => {\n        if (TypeChecker.isAttribute(structure[key])) {\n            Object.defineProperty(item, key, {\n                get() {\n                    return stateProvider.get(key);\n                },\n                set(value) {\n                    stateProvider.set(key, value);\n                }\n            })\n        } else if (TypeChecker.isReference(structure[key])) {\n            const relationName = structure[key].model;\n            const relationID = stateProvider.get(key);\n            let initialSubject = null;\n            if (relationID) {\n                initialSubject = store.getOrCreateEntitySubject(relationName, relationID);\n                subscribe(relationName, relationID);     \n            }\n            Object.defineProperty(item, key, {\n                get() {\n                    return R.path(['interface'], initialSubject);\n                },\n                set(value) {\n                    if (initialSubject) {\n                        unsubscribe(relationName, initialSubject.id);\n                    }\n\n                    const refID = _processReference(value, stateProvider);\n                    stateProvider.set(key, refID);\n                    if (refID) {\n                        initialSubject = store.getOrCreateEntitySubject(relationName, refID);\n                        subscribe(relationName, relationID);\n                    }\n                }\n            })\n        } else if (TypeChecker.isAttributeArray(structure[key])) {\n            Object.defineProperty(item, key, {\n                get() {\n                    return stateProvider.get(key);\n                },\n                set(value) {\n                    stateProvider.set(key, value);\n                }\n            })\n        } else if (TypeChecker.isReferenceArray(structure[key])) {\n            const relationName = structure[key].arrayOfType.model;\n            const relationIDs = stateProvider.get(key);\n            let subjects = [];\n            subjects = relationIDs.map(relationID => {\n                const subject = store.getOrCreateEntitySubject(relationName, relationID);\n                subscribe(relationName, relationID)\n                return subject;\n            });\n            Object.defineProperty(item, key, {\n                get() {\n                    return subjects.map(it => it.interface);\n                },\n                set(relationIDs) {\n                    subjects.forEach(subject => {\n                        unsubscribe(relationName, subject.id);\n                    });\n                    subjects = relationIDs.map(value => {\n                        const refID = _processReference(value, stateProvider);\n                        if (refID) {\n                            const initialSubject = store.getOrCreateEntitySubject(relationName, refID);\n                            subscribe(relationName, refID);\n                            return initialSubject;\n                        }\n                    });\n                    stateProvider.set(key, subjects.map(it => it.id));\n                }\n            })\n        } else if (TypeChecker.isIdentifier(structure[key])) {\n            Object.defineProperty(item, key, {\n                get() {\n                    \n                    return stateProvider.get('id')\n                },\n                set(value) {\n\n                }\n            })\n        } else {\n            const get = (key2) => {\n                if (stateProvider.get(key))\n                    return stateProvider.get(key)[key2];\n                else\n                    throw new Error(`Trying to read not existing entity`)\n            }\n            const set = (key2, value) => {\n                stateProvider.set(key, {\n                    [key2]: value\n                })\n            }\n\n            item[key] = createReactiveInterface({\n                item: {},\n                stateProvider: {\n                    get,\n                    set\n                },\n                store: store,\n                updateState: updateState,\n                structure: structure[key],\n                subscribe: subscribe,\n                unsubscribe: unsubscribe\n            })\n\n        }\n    });\n    return item;\n}\n\nexport default createReactiveInterface;",
@@ -2795,7 +2928,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 154,
+    "__docId__": 151,
     "kind": "function",
     "name": "_processReference",
     "memberof": "src/functions/createReactiveInterface.js",
@@ -2832,7 +2965,7 @@
     "ignore": true
   },
   {
-    "__docId__": 155,
+    "__docId__": 152,
     "kind": "function",
     "name": "createReactiveInterface",
     "memberof": "src/functions/createReactiveInterface.js",
@@ -2872,7 +3005,7 @@
     }
   },
   {
-    "__docId__": 156,
+    "__docId__": 153,
     "kind": "file",
     "name": "src/functions/extendArray.js",
     "content": "export default (arrayToExtend, onNewArray) => {\n    arrayToExtend.push = function (item) {\n        const newArray = arrayToExtend.concat([item]);\n        onNewArray(newArray);\n    }\n}",
@@ -2883,7 +3016,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 157,
+    "__docId__": 154,
     "kind": "function",
     "name": "extendArray",
     "memberof": "src/functions/extendArray.js",
@@ -2915,7 +3048,7 @@
     "return": null
   },
   {
-    "__docId__": 158,
+    "__docId__": 155,
     "kind": "file",
     "name": "src/functions/setComputedProperty.js",
     "content": "export default function setComputedProperty(item, key, computer){\n    Object.defineProperty(item, key, {\n        get(){\n            try{\n                return computer.bind(item)()\n            }catch(e){\n                return null;\n            }\n        },\n        set(val){\n            // ignore, immutable\n        }\n    });\n}",
@@ -2926,7 +3059,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 159,
+    "__docId__": 156,
     "kind": "function",
     "name": "setComputedProperty",
     "memberof": "src/functions/setComputedProperty.js",
@@ -2968,7 +3101,7 @@
     }
   },
   {
-    "__docId__": 160,
+    "__docId__": 157,
     "kind": "file",
     "name": "src/functions/typeChecker.js",
     "content": "import types from '../types';\n\nexport const isAttribute = (type) => {\n    return types.Attribute.type === type.type;\n}\n\n\n\nexport const isIdentifier = (type) => {\n    return type.type === types.Identifier.type;\n}\n\nexport const isReference = (type) => {\n    return type.type === types.Reference().type;\n}\n\n\nexport const isAttributeArray = (type) => {\n    return type.type === types.Array().type && type.arrayOfType.type !== types.Reference().type;\n}\n\n\nexport const isReferenceArray = (type) => {\n    return type.type === types.Array().type && type.arrayOfType.type === types.Reference().type;\n}",
@@ -2979,7 +3112,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 161,
+    "__docId__": 158,
     "kind": "function",
     "name": "isAttribute",
     "memberof": "src/functions/typeChecker.js",
@@ -3009,7 +3142,7 @@
     }
   },
   {
-    "__docId__": 162,
+    "__docId__": 159,
     "kind": "function",
     "name": "isIdentifier",
     "memberof": "src/functions/typeChecker.js",
@@ -3039,7 +3172,7 @@
     }
   },
   {
-    "__docId__": 163,
+    "__docId__": 160,
     "kind": "function",
     "name": "isReference",
     "memberof": "src/functions/typeChecker.js",
@@ -3069,7 +3202,7 @@
     }
   },
   {
-    "__docId__": 164,
+    "__docId__": 161,
     "kind": "function",
     "name": "isAttributeArray",
     "memberof": "src/functions/typeChecker.js",
@@ -3099,7 +3232,7 @@
     }
   },
   {
-    "__docId__": 165,
+    "__docId__": 162,
     "kind": "function",
     "name": "isReferenceArray",
     "memberof": "src/functions/typeChecker.js",
@@ -3129,7 +3262,7 @@
     }
   },
   {
-    "__docId__": 166,
+    "__docId__": 163,
     "kind": "file",
     "name": "src/index.js",
     "content": "/**\n * \n */\n\nimport Model from './entity/Model';\nimport EntitySubject from './entity/EntitySubject';\nimport Mutation from './entity/Mutation';\n\n/**\n * \n */\n\nimport EntityStore from './EntityStore'\n\nimport Directory from './directory/Directory';\nimport DirectorySubject from './directory/DirectorySubject';\nimport DirectoryMutation from './directory/DirectoryMutation';\n\nimport types from './types'\n\nexport default {\n    Model,\n    EntitySubject,\n    EntityMutation: Mutation,\n    Directory,\n    DirectorySubject,\n    DirectoryMutation,\n    EntityStore,\n    types\n}\n\n",
@@ -3140,10 +3273,10 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 167,
+    "__docId__": 164,
     "kind": "file",
     "name": "src/types.js",
-    "content": "\nexport default  {\n    Attribute: {\n        type: 'Attribute',\n        default() {\n            return null;\n        }\n    },\n    Identifier: {\n        type: 'Identifier',\n    },\n    Array: (Type) => {\n        return {\n            type: 'Array',\n            arrayOfType: Type,\n            check(value) {\n                return Array.isArray(value) && (value.length === 0 || this.arrayOfType.check(value[0]));\n            },\n            default() {\n                return [];\n            }\n        }\n    },\n    Reference: (Model) => {\n        return {\n            type: 'Reference',\n            model: Model,\n            default() {\n                return null;\n            },\n            check(value) {\n                const isNumber = (v) => typeof (v) === 'number' || v instanceof Number\n                return isNumber(value) || !value || isNumber(value.id)\n            }\n        }\n    }\n}",
+    "content": "/**\n * @property {Object} [Attribute] - stands for string, boolean or number\n */\nexport default  {\n    Attribute: {\n        type: 'Attribute',\n        default() {\n            return null;\n        }\n    },\n    Identifier: {\n        type: 'Identifier',\n    },\n    Array: (Type) => {\n        return {\n            type: 'Array',\n            arrayOfType: Type,\n            check(value) {\n                return Array.isArray(value) && (value.length === 0 || this.arrayOfType.check(value[0]));\n            },\n            default() {\n                return [];\n            }\n        }\n    },\n    Reference: (Model) => {\n        return {\n            type: 'Reference',\n            model: Model,\n            default() {\n                return null;\n            },\n            check(value) {\n                const isNumber = (v) => typeof (v) === 'number' || v instanceof Number\n                return isNumber(value) || !value || isNumber(value.id)\n            }\n        }\n    }\n}",
     "static": true,
     "longname": "/home/enchanting/Work/vibejs/src/types.js",
     "access": "public",
@@ -3152,7 +3285,7 @@
   },
   {
     "kind": "index",
-    "content": "# Vibe.js\n\n## Install\n\n`yarn add vibejs`\n\n`npm install vibejs`\n\n## Tests\n\n`yarn test`\n\nFor now vibejs has 29 tests.\n\nHi there, this is reactive state management tool for JavaScript.\n\nThere are 3 core concepts:\n1) Model and EntitySubject\n2) EntityStore\n3) Directory and DirectorySubject\n\n## Model\n\nModel is description of entity.\n\nYou can describe it like this:\n```js\nconst User = new Model('User', {\n    structure: {\n        name: types.Attribute,\n        mother: types.Reference('User'), // reference to entity with name 'User'\n        mother: types.Reference('User'), //same\n        wrappedValues: { // you can create wrapped structures\n            age: types.Attribute\n        }\n    },\n    computed: {\n        upperCaseName(){\n            return this.name.toUpperCase()\n        }\n    },\n    mutations: {\n        setName(newName){\n            this.name = newName;\n        }\n    }\n});\n```\n\nAfter this, you can insert new entity and observe it.\n\n```js\nUser.insertEntity(1, {\n    name: \"Elon Musk\",\n    mother: 2, // reference by id,\n    father: User.observe(3).interface, // or by subject interface\n    wrappedValues: {\n        age: 46\n    } \n});\nconst subject = User.observe(1);\n```\n\nWhat happens:\n1) You push json into model's `insertEntity` method\n2) Model checks its structure and sets default if not set\n3) Model pushes entity into store\n4) Store notifies everybody, who is observing entity of type `User` and `id=1`.\n\nAnd now we got subject. In vibejs subject is object to work with entity.\n\n\nAt this point you already can use `subject` to access and change reactive entity's data. For example\n\n```js\nUser.insertEntity(5, {\n    name: \"Errol Musk\",\n});\nconst reactiveInterface = subject.interface;\nreactiveInterface.father = 5; // access relation directly by i\nreactiveInterface.father = User.observe(5).interface // or by subject's interface\nreactiveInterface.father.name = \"Somebody else\"\n// after this line User#5 will have name equals `Somebody else` and user#1 will get updated\n```\n\nBut we want to compose different data, like models or just primitives. For example, if you need screen, where user supposed to change his name.\nWe need to compose `newUserName` and entity he updates.\n\nTo do this, we need to define `Directory`\n\n```js\nconst UpdateProfileDirectory = new Directory('UpdateProfile', {\n    structure: {\n        newUserName: types.Attribute,\n        profile: types.Reference('User')\n    },\n    mutations: {\n        commitNewName(){\n            /* fetch(...).then(response => {\n                User.observe(this.profile.id)\n                    .mutate(response, 'Updated from updateProfile')\n            })*/\n            // we can commit our mutations with text message for debugging purposes.\n        }\n    }\n}, Store)\n```\n\nDirectory has no identifier. It is just structure of document you need.\n\nSo, at some point it's nice already.\nBut what about changes? Reacting only for necessary data changes is core point of Vibe.\nIt means, any subject won't get updated if its attribute is not updated or its relation is not updated.\n\nHere are examples how you subscribe to changes of entity\n```js\nsubject.observable.subscribe(({payload, source}) => {\n    // payload is structure from store\n    // source - subject which caused update\n    \n})\n```\n\n... or to directory\n```js\nUpdateProfileDirectory.observable.subscribe(state => {\n    // state - inner structure, like entity's in the store\n    /*\n        renderComponent();\n    */\n});\n```\n\nIt means, you won't need to react to all changes, like in `Flux` solutions.\n\nYou create structure for a concrete task. You define relationships and your durectory will only get updated if this relationships are updated(and they will update if their relationships are updated and like this...).\n\n\nTODO: \n1) JSONifying subjects \n2) Persistence of store and directories\n3) Examples with vue, react.\n\n",
+    "content": "# Vibe.js\n\n## Install\n\n`yarn add vibejs`\n\n`npm install vibejs`\n\n## Tests\n\n`yarn test`\n\nFor now vibejs has 34 tests.\n\n## Documentation\n[Github pages](https://vibe-js.github.io/)\n## Core \n\nThere are 3 core concepts:\n1) Model and EntitySubject\n2) EntityStore\n3) Directory and DirectorySubject\n\n## Model\n\nModel is description of entity.\n\nYou can describe it like this:\n```js\nconst User = new Model('User', {\n    structure: {\n        name: types.Attribute,\n        mother: types.Reference('User'), // reference to entity with name 'User'\n        mother: types.Reference('User'), //same\n        wrappedValues: { // you can create wrapped structures\n            age: types.Attribute\n        }\n    },\n    computed: {\n        upperCaseName(){\n            return this.name.toUpperCase()\n        }\n    },\n    mutations: {\n        setName(newName){\n            this.name = newName;\n        }\n    }\n});\n```\n\nAfter this, you can insert new entity and observe it.\n\n```js\nUser.insertEntity(1, {\n    name: \"Elon Musk\",\n    mother: 2, // reference by id,\n    father: User.observe(3).interface, // or by subject interface\n    wrappedValues: {\n        age: 46\n    } \n});\nconst subject = User.observe(1);\n```\n\nWhat happens:\n1) You push json into model's `insertEntity` method\n2) Model checks its structure and sets default if not set\n3) Model pushes entity into store\n4) Store notifies everybody, who is observing entity of type `User` and `id=1`.\n\nAnd now we got subject. In vibejs subject is object to work with entity.\n\n\nAt this point you already can use `subject` to access and change reactive entity's data. For example\n\n```js\nUser.insertEntity(5, {\n    name: \"Errol Musk\",\n});\nconst reactiveInterface = subject.interface;\nreactiveInterface.father = 5; // access relation directly by i\nreactiveInterface.father = User.observe(5).interface // or by subject's interface\nreactiveInterface.father.name = \"Somebody else\"\n// after this line User#5 will have name equals `Somebody else` and user#1 will get updated\n```\n\nBut we want to compose different data, like models or just primitives. For example, if you need screen, where user supposed to change his name.\nWe need to compose `newUserName` and entity he updates.\n\nTo do this, we need to define `Directory`\n\n```js\nconst UpdateProfileDirectory = new Directory('UpdateProfile', {\n    structure: {\n        newUserName: types.Attribute,\n        profile: types.Reference('User')\n    },\n    mutations: {\n        commitNewName(){\n            /* fetch(...).then(response => {\n                User.observe(this.profile.id)\n                    .mutate(response, 'Updated from updateProfile')\n            })*/\n            // we can commit our mutations with text message for debugging purposes.\n        }\n    }\n}, Store)\n```\n\nDirectory has no identifier. It is just structure of document you need.\n\nSo, at some point it's nice already.\nBut what about changes? Reacting only for necessary data changes is core point of Vibe.\nIt means, any subject won't get updated if its attribute is not updated or its relation is not updated.\n\nHere are examples how you subscribe to changes of entity\n```js\nsubject.observable.subscribe(({payload, source}) => {\n    // payload is structure from store\n    // source - subject which caused update\n    \n})\n```\n\n... or to directory\n```js\nUpdateProfileDirectory.observable.subscribe(state => {\n    // state - inner structure, like entity's in the store\n    /*\n        renderComponent();\n    */\n});\n```\n\nIt means, you won't need to react to all changes, like in `Flux` solutions.\n\nYou create structure for a concrete task. You define relationships and your durectory will only get updated if this relationships are updated(and they will update if their relationships are updated and like this...).\n\n\nTODO: \n1) JSONifying subjects \n2) Persistence of store and directories\n3) Examples with vue, react.\n\n",
     "longname": "/home/enchanting/Work/vibejs/README.md",
     "name": "./README.md",
     "static": true,
